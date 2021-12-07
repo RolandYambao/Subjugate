@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.factionTraits.belongsTo(models.factions, { foreignKey: 'factionId' });
+      models.factionTraits.hasMany(models.factionUnits, { foreignKey: 'traitId' });
+      models.factionTraits.hasMany(models.factionBuildings, { foreignKey: 'traitId' });
+      models.factionTraits.hasMany(models.factionPowers, { foreignKey: 'traitId' });
     }
   };
   factionTraits.init({

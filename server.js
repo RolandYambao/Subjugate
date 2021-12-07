@@ -7,6 +7,23 @@ const session = require('express-session');
 const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
 
+const {
+  Factions,
+  FactionTraits,
+  FactionUnits,
+  FactionBuildings,
+  FactionPowers,
+  GroundUnits,
+  NavalUnits,
+  AirUnits,
+  BaseBuildings,
+  ProductionBuildings,
+  DefensiveBuildings,
+  OffensivePowers,
+  DefensivePowers,
+  StatusPowers,
+} = require("./models");
+
 const SECRET_SESSION = process.env.SECRET_SESSION;
 console.log(SECRET_SESSION);
 
@@ -40,7 +57,7 @@ app.get('/', (req, res) => {
 
 // Add this above /auth controllers
 app.get('/profile', isLoggedIn, (req, res) => {
-  const { id, name, email } = req.user.get(); 
+  const { id, name, email } = req.user.get();
   res.render('profile', { id, name, email });
 });
 

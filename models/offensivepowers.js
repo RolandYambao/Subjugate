@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.offensivePowers.belongsTo(models.factionPowers, { foreignKey: 'supportPowerId' });
     }
   };
   offensivePowers.init({

@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.navalUnits.belongsTo(models.factionUnits, { foreignKey: 'unitId' });
     }
   };
   navalUnits.init({
