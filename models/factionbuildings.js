@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       models.factionBuildings.belongsTo(models.factionTraits, { foreignKey: 'traitId' });
       models.factionBuildings.hasMany(models.baseBuildings, { foreignKey: 'buildingId' });
       models.factionBuildings.hasMany(models.productionBuildings, { foreignKey: 'buildingId' });
-      models.factionBuildings.hasMany(models.defenseBuildings, { foreignKey: 'buildingId' });
+      models.factionBuildings.hasMany(models.defensiveBuildings, { foreignKey: 'buildingId' });
     }
   };
   factionBuildings.init({
