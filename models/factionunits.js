@@ -18,9 +18,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   factionUnits.init({
-    groundUnits: DataTypes.STRING,
-    navalUnits: DataTypes.STRING,
-    airUnits: DataTypes.STRING,
+    ground: DataTypes.STRING,
+    naval: DataTypes.STRING,
+    air: DataTypes.STRING,
     traitId: DataTypes.INTEGER
   }, {
     sequelize,

@@ -18,9 +18,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   factionBuildings.init({
-    baseBuildings: DataTypes.STRING,
-    productionBuildings: DataTypes.STRING,
-    defenseBuildings: DataTypes.STRING,
+    base: DataTypes.STRING,
+    production: DataTypes.STRING,
+    defense: DataTypes.STRING,
     traitId: DataTypes.INTEGER
   }, {
     sequelize,

@@ -18,9 +18,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   factionPowers.init({
-    offensivePowers: DataTypes.STRING,
-    defensivePowers: DataTypes.STRING,
-    statusPowers: DataTypes.STRING,
+    offensive: DataTypes.STRING,
+    defensive: DataTypes.STRING,
+    status: DataTypes.STRING,
     traitId: DataTypes.INTEGER
   }, {
     sequelize,
