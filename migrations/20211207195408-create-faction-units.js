@@ -8,13 +8,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      groundUnits: {
+      ground: {
         type: Sequelize.STRING
       },
-      navalUnits: {
+      naval: {
         type: Sequelize.STRING
       },
-      airUnits: {
+      air: {
         type: Sequelize.STRING
       },
       traitId: {

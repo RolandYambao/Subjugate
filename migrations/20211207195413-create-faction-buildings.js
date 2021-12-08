@@ -8,13 +8,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      baseBuildings: {
+      base: {
         type: Sequelize.STRING
       },
-      productionBuildings: {
+      production: {
         type: Sequelize.STRING
       },
-      defenseBuildings: {
+      defensive: {
         type: Sequelize.STRING
       },
       traitId: {

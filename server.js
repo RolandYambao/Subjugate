@@ -114,16 +114,28 @@ const server = app.listen(PORT, () => {
 //     console.log('ERROR with adding new Faction Units', error);
 //   });
 
-factionBuildings.create({
-  base: 'Base Buildings',
-  production: 'Production Buildings',
-  defensive: 'Defense Buildings'
-})
-  .then(function (createdFactioonBuildings) {
-    console.log('New Faction Buildings', createdFactioonBuildings);
+// factionBuildings.create({
+//   base: 'Base Buildings',
+//   production: 'Production Buildings',
+//   defensive: 'Defense Buildings'
+// })
+//   .then(function (createdFactioonBuildings) {
+//     console.log('New Faction Buildings', createdFactioonBuildings);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Faction Buildings', error);
+//   });
+
+  factionPowers.create({
+    offensive: 'Base Buildings',
+    defensive: 'Production Buildings',
+    status: 'Defense Buildings'
   })
-  .catch(function (err) {
-    console.log('ERROR with adding new Faction Buildings', error);
-  });
+    .then(function (createdFactioonBuildings) {
+      console.log('New Faction Buildings', createdFactioonBuildings);
+    })
+    .catch(function (err) {
+      console.log('ERROR with adding new Faction Buildings', error);
+    });
 
 module.exports = server;

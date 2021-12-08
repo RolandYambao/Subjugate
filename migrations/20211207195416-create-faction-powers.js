@@ -8,13 +8,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      offensivePowers: {
+      offensive: {
         type: Sequelize.STRING
       },
-      defensivePowers: {
+      defensive: {
         type: Sequelize.STRING
       },
-      statusPowers: {
+      status: {
         type: Sequelize.STRING
       },
       traitId: {
