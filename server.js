@@ -578,4 +578,82 @@ const server = app.listen(PORT, () => {
 //     console.log('ERROR with adding new Offensive Power', error);
 //   });
 
+// defensivePowers.create({
+//   name: 'Pillars of Rule',
+//   cooldownTime: 180,
+//   requirement: 'Command Center',
+//   description: 'Creates a Stasis Shield in a Selected Area',
+// })
+//   .then(function (createdDefensivePower) {
+//     console.log('New Defensive Power', createdDefensivePower);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Defensive Power', error);
+//   });
+
+// defensivePowers.create({
+//   name: 'Shields of Despotism',
+//   cooldownTime: 180,
+//   requirement: 'Command Center',
+//   description: 'Units Increase their HP in a Selected Area',
+// })
+//   .then(function (createdDefensivePower) {
+//     console.log('New Defensive Power', createdDefensivePower);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Defensive Power', error);
+//   });
+
+// defensivePowers.create({
+//   name: 'Unbreakable Will',
+//   cooldownTime: 300,
+//   requirement: 'Committee 871 Headquarters',
+//   description: 'Units Become Invulnerable within a Selected Area',
+// })
+//   .then(function (createdDefensivePower) {
+//     console.log('New Defensive Power', createdDefensivePower);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Defensive Power', error);
+//   });
+
+// statusPowers.create({
+//   name: 'Divine Blessing',
+//   cooldownTime: 120,
+//   requirement: 'Command Center',
+//   description: 'Slow Healing Aura Placed in a Selected Area',
+// })
+//   .then(function (createdStatusPower) {
+//     console.log('New Status Power', createdStatusPower);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Status Power', error);
+//   });
+
+// statusPowers.create({
+//   name: 'Oppressive Gaze',
+//   cooldownTime: 120,
+//   requirement: 'Command Center',
+//   description: 'Enemies in a Selected Area Move and Attack Slower',
+// })
+//   .then(function (createdStatusPower) {
+//     console.log('New Status Power', createdStatusPower);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Status Power', error);
+//   });
+
+// statusPowers.create({
+//   name: 'Tyrannical Terror',
+//   cooldownTime: 300,
+//   requirement: 'Committee 871 Headquarters',
+//   description: 'Enemies in a Selected Area Immediately Retreat in Terror',
+// })
+//   .then(function (createdStatusPower) {
+//     console.log('New Status Power', createdStatusPower);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Status Power', error);
+//   });
+
 module.exports = server;
