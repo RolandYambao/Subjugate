@@ -552,4 +552,30 @@ offensivePowers.create({
     console.log('ERROR with adding new Offensive Power', error);
   });
 
+offensivePowers.create({
+  name: 'March of Tyranny',
+  cooldownTime: 300,
+  requirement: 'Committee 871 Headquarters',
+  description: 'All Troops within an Area become Invulnerable for 10 Seconds',
+})
+  .then(function (createdOffensivePower) {
+    console.log('New Offensive Power', createdOffensivePower);
+  })
+  .catch(function (err) {
+    console.log('ERROR with adding new Offensive Power', error);
+  });
+
+offensivePowers.create({
+  name: 'Edict of Annihilation',
+  cooldownTime: 480,
+  requirement: 'Despotic Annihilator',
+  description: 'Fires the Despotic Annihilator to Destroy All in an Area',
+})
+  .then(function (createdOffensivePower) {
+    console.log('New Offensive Power', createdOffensivePower);
+  })
+  .catch(function (err) {
+    console.log('ERROR with adding new Offensive Power', error);
+  });
+
 module.exports = server;
