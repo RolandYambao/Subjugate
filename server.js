@@ -41,9 +41,6 @@ app.use(session({
   saveUninitialized: true    // If we have a new session, we save it, therefore making that true
 }));
 
-// IMPORT my CONTROLLERS
-// app.use('/factions', require('./controllers/factions'));
-
 app.get('/', function (req, res) {
   res.json({ message: 'Welcome to Subjugate' });
 });
@@ -70,8 +67,9 @@ app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile', { id, name, email });
 });
 
-// controllers
-app.use('/auth', require('./controllers/auth'));
+// IMPORT my CONTROLLERS
+// app.use('/auth', require('./controllers/auth'));
+// app.use('/factions', require('./controllers/factions'));
 
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {
@@ -398,17 +396,160 @@ const server = app.listen(PORT, () => {
 //     console.log('ERROR with adding new Base Building', error);
 //   });
 
-defensiveBuildings.create({
-  name: 'Committee 871 Headquarters',
-  hp: 200,
-  buildTime: 100,
-  description: 'Where we Research more Advance Units and Support Powers',
+// productionBuildings.create({
+//   name: 'Barracks',
+//   hp: 100,
+//   buildTime: 25,
+//   description: 'Cannon Fodder Production Facility',
+// })
+//   .then(function (createdProductionBuilding) {
+//     console.log('New Production Building', createdProductionBuilding);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Production Building', error);
+//   });
+
+// productionBuildings.create({
+//   name: 'War Factory',
+//   hp: 200,
+//   buildTime: 40,
+//   description: 'Creator of the Tyrannical Vanguard',
+// })
+//   .then(function (createdProductionBuilding) {
+//     console.log('New Production Building', createdProductionBuilding);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Production Building', error);
+//   });
+
+// productionBuildings.create({
+//   name: 'Naval Yard',
+//   hp: 200,
+//   buildTime: 40,
+//   description: 'Factories for the Deep',
+// })
+//   .then(function (createdProductionBuilding) {
+//     console.log('New Production Building', createdProductionBuilding);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Production Building', error);
+//   });
+
+// productionBuildings.create({
+//   name: 'Airfield',
+//   hp: 150,
+//   buildTime: 50,
+//   description: 'Creator of Terror from the Sky',
+// })
+//   .then(function (createdProductionBuilding) {
+//     console.log('New Production Building', createdProductionBuilding);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Production Building', error);
+//   });
+
+// defensiveBuildings.create({
+//   name: 'Trenches',
+//   hp: 250,
+//   buildTime: 10,
+//   description: 'The Place where Cannon Fodder go to Die',
+// })
+//   .then(function (createdDefensiveBuilding) {
+//     console.log('New Defensive Building', createdDefensiveBuilding);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Defensive Building', error);
+//   });
+
+// defensiveBuildings.create({
+//   name: 'Watchtower',
+//   hp: 100,
+//   buildTime: 15,
+//   description: 'Far Seeing Eyes to Hunt Down Enemies',
+// })
+//   .then(function (createdDefensiveBuilding) {
+//     console.log('New Defensive Building', createdDefensiveBuilding);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Defensive Building', error);
+//   });
+
+// defensiveBuildings.create({
+//   name: 'Pillbox',
+//   hp: 300,
+//   buildTime: 30,
+//   description: 'A Trench with Greater Survivability',
+// })
+//   .then(function (createdDefensiveBuilding) {
+//     console.log('New Defensive Building', createdDefensiveBuilding);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Defensive Building', error);
+//   });
+
+// defensiveBuildings.create({
+//   name: 'Enslaver',
+//   hp: 150,
+//   buildTime: 30,
+//   description: 'Controls the Mind of Any who go Near It',
+// })
+//   .then(function (createdDefensiveBuilding) {
+//     console.log('New Defensive Building', createdDefensiveBuilding);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Defensive Building', error);
+//   });
+
+// defensiveBuildings.create({
+//   name: 'Despotic Annihilator',
+//   hp: 500,
+//   buildTime: 100,
+//   description: 'Unleashes a Tidal Wave of Psychic Energy, Designed to Dominate the Minds of an Entire Planet',
+// })
+//   .then(function (createdDefensiveBuilding) {
+//     console.log('New Defensive Building', createdDefensiveBuilding);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Defensive Building', error);
+//   });
+
+offensivePowers.create({
+  name: 'Reign of Fire',
+  cooldownTime: 180,
+  requirement: 'Command Center',
+  description: 'Fireballs Fall from the Sky to Smite the Enemies of the Legion',
 })
-  .then(function (createdDefensiveBuilding) {
-    console.log('New Defensive Building', createdDefensiveBuilding);
+  .then(function (createdOffensivePower) {
+    console.log('New Offensive Power', createdOffensivePower);
   })
   .catch(function (err) {
-    console.log('ERROR with adding new Defensive Building', error);
+    console.log('ERROR with adding new Offensive Power', error);
+  });
+
+offensivePowers.create({
+  name: 'Fervent Despoilation',
+  cooldownTime: 180,
+  requirement: 'Command Center',
+  description: 'Mobs of Cannon Fodder Militia invade the Map, Attacking your Enemies',
+})
+  .then(function (createdOffensivePower) {
+    console.log('New Offensive Power', createdOffensivePower);
+  })
+  .catch(function (err) {
+    console.log('ERROR with adding new Offensive Power', error);
+  });
+
+offensivePowers.create({
+  name: 'Fervent Despoilation',
+  cooldownTime: 180,
+  requirement: 'Command Center',
+  description: 'Mobs of Cannon Fodder Militia invade the Map, Attacking your Enemies',
+})
+  .then(function (createdOffensivePower) {
+    console.log('New Offensive Power', createdOffensivePower);
+  })
+  .catch(function (err) {
+    console.log('ERROR with adding new Offensive Power', error);
   });
 
 module.exports = server;
