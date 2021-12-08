@@ -540,10 +540,10 @@ offensivePowers.create({
   });
 
 offensivePowers.create({
-  name: 'Fervent Despoilation',
-  cooldownTime: 180,
-  requirement: 'Command Center',
-  description: 'Mobs of Cannon Fodder Militia invade the Map, Attacking your Enemies',
+  name: 'Spirit of Oblivion',
+  cooldownTime: 300,
+  requirement: 'Committee 871 Headquarters',
+  description: 'Flying Drones Swarm a Large Area, Melting all who Stand in their Way',
 })
   .then(function (createdOffensivePower) {
     console.log('New Offensive Power', createdOffensivePower);
