@@ -10,8 +10,13 @@
     <% for( let index = 0; index < factions.length; index++ ) { %>
         <% let a = factions[index]; %> 
         <% a = a.toJSON() %>
-        <p><%= a.firstFaction %></p>
-        <p><%= a.secondFaction %></p>
-        <p><%= a.thirdFaction %></p>
+        <p style="margin-bottom:0;"><%= a.firstFaction %></p>
+        <% if (currentUser) { %>
+            <p href="/factionTraits">View Legions of Tyranny</p>
+            <% } %>
+        <p style="margin-bottom:0;"><%= a.secondFaction %></p> 
+        <p>Coming Soon</p>
+        <p style="margin-bottom:0;"><%= a.thirdFaction %></p> 
+        <p>Coming Soon</p>
     <% } %>
 </body>
