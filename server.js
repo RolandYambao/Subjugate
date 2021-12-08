@@ -203,4 +203,212 @@ const server = app.listen(PORT, () => {
 //     console.log('ERROR with adding new Ground Unit', error);
 //   });
 
+// navalUnits.create({
+//   name: 'Sampan',
+//   hp: 20,
+//   attack: 10,
+//   description: 'Expendable Little Boats used for Scouting'
+// })
+//   .then(function (createdNavalUnit) {
+//     console.log('New Naval Unit', createdNavalUnit);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Naval Unit', error);
+//   });
+
+// navalUnits.create({
+//   name: 'Galley',
+//   hp: 100,
+//   attack: 50,
+//   description: 'Anachronistic Ships using Servilepods as Rowers'
+// })
+//   .then(function (createdNavalUnit) {
+//     console.log('New Naval Unit', createdNavalUnit);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Naval Unit', error);
+//   });
+
+// navalUnits.create({
+//   name: 'Undersear',
+//   hp: 75,
+//   attack: 150,
+//   description: 'The Silent Death of a Tiny Submarine'
+// })
+//   .then(function (createdNavalUnit) {
+//     console.log('New Naval Unit', createdNavalUnit);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Naval Unit', error);
+//   });
+
+// navalUnits.create({
+//   name: 'Obliterator',
+//   hp: 250,
+//   attack: 100,
+//   description: 'Many Gunned Destroyers Seeking to Conquer'
+// })
+//   .then(function (createdNavalUnit) {
+//     console.log('New Naval Unit', createdNavalUnit);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Naval Unit', error);
+//   });
+
+// navalUnits.create({
+//   name: 'Kraken',
+//   hp: 200,
+//   attack: 200,
+//   description: 'Enslaved Monsters of the Deep in Service to the Legions'
+// })
+//   .then(function (createdNavalUnit) {
+//     console.log('New Naval Unit', createdNavalUnit);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Naval Unit', error);
+//   });
+
+// airUnits.create({
+//   name: 'Floaters',
+//   hp: 10,
+//   attack: 5,
+//   description: 'Floating Jellyfish with Guns, Servilepods of the Sky'
+// })
+//   .then(function (createdAirUnit) {
+//     console.log('New Air Unit', createdAirUnit);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Air Unit', error);
+//   });
+
+// airUnits.create({
+//   name: 'Blades of Terror',
+//   hp: 50,
+//   attack: 75,
+//   description: 'Gyroplanes carrying Simple Bombs and Machine Guns'
+// })
+//   .then(function (createdAirUnit) {
+//     console.log('New Air Unit', createdAirUnit);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Air Unit', error);
+//   });
+
+// airUnits.create({
+//   name: 'The All Seeing',
+//   hp: 25,
+//   attack: 25,
+//   description: 'Floating Platforms Holding Overseers, Improves Morale through Fear'
+// })
+//   .then(function (createdAirUnit) {
+//     console.log('New Air Unit', createdAirUnit);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Air Unit', error);
+//   });
+
+// airUnits.create({
+//   name: 'Subjugators',
+//   hp: 75,
+//   attack: 150,
+//   description: 'Plays the Siren of Death before your Destruction'
+// })
+//   .then(function (createdAirUnit) {
+//     console.log('New Air Unit', createdAirUnit);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Air Unit', error);
+//   });
+
+// airUnits.create({
+//   name: 'Oppressors',
+//   hp: 100,
+//   attack: 300,
+//   description: 'Keeps Entire Nations under Control with a Carpet of 5000 lbs Bombs'
+// })
+//   .then(function (createdAirUnit) {
+//     console.log('New Air Unit', createdAirUnit);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Air Unit', error);
+//   });
+
+// baseBuildings.create({
+//   name: 'Command Center',
+//   hp: 1000,
+//   buildTime: 60,
+//   description: 'The Control Area for you, Commander',
+// })
+//   .then(function (createdBaseBuilding) {
+//     console.log('New Base Building', createdBaseBuilding);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Base Building', error);
+//   });
+
+// baseBuildings.create({
+//   name: 'Enhanced Geothermal Plants',
+//   hp: 500,
+//   buildTime: 20,
+//   description: 'The Harvester of our Limitless Power Source',
+// })
+//   .then(function (createdBaseBuilding) {
+//     console.log('New Base Building', createdBaseBuilding);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Base Building', error);
+//   });
+
+// baseBuildings.create({
+//   name: 'Serf Ore Harvester',
+//   hp: 250,
+//   buildTime: 30,
+//   description: 'Using Plentiful Servilepods and Serfs to Harvest Resources for us',
+// })
+//   .then(function (createdBaseBuilding) {
+//     console.log('New Base Building', createdBaseBuilding);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Base Building', error);
+//   });
+
+// baseBuildings.create({
+//   name: 'Eye of Despotism',
+//   hp: 150,
+//   buildTime: 45,
+//   description: 'Our Eyes and Ears are Everywhere',
+// })
+//   .then(function (createdBaseBuilding) {
+//     console.log('New Base Building', createdBaseBuilding);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Base Building', error);
+//   });
+
+// baseBuildings.create({
+//   name: 'Committee 871 Headquarters',
+//   hp: 200,
+//   buildTime: 100,
+//   description: 'Where we Research more Advance Units and Support Powers',
+// })
+//   .then(function (createdBaseBuilding) {
+//     console.log('New Base Building', createdBaseBuilding);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Base Building', error);
+//   });
+
+defensiveBuildings.create({
+  name: 'Committee 871 Headquarters',
+  hp: 200,
+  buildTime: 100,
+  description: 'Where we Research more Advance Units and Support Powers',
+})
+  .then(function (createdDefensiveBuilding) {
+    console.log('New Defensive Building', createdDefensiveBuilding);
+  })
+  .catch(function (err) {
+    console.log('ERROR with adding new Defensive Building', error);
+  });
+
 module.exports = server;
