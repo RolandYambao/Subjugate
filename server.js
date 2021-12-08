@@ -513,69 +513,69 @@ const server = app.listen(PORT, () => {
 //     console.log('ERROR with adding new Defensive Building', error);
 //   });
 
-offensivePowers.create({
-  name: 'Reign of Fire',
-  cooldownTime: 180,
-  requirement: 'Command Center',
-  description: 'Fireballs Fall from the Sky to Smite the Enemies of the Legion',
-})
-  .then(function (createdOffensivePower) {
-    console.log('New Offensive Power', createdOffensivePower);
-  })
-  .catch(function (err) {
-    console.log('ERROR with adding new Offensive Power', error);
-  });
+// offensivePowers.create({
+//   name: 'Reign of Fire',
+//   cooldownTime: 180,
+//   requirement: 'Command Center',
+//   description: 'Fireballs Fall from the Sky to Smite the Enemies of the Legion',
+// })
+//   .then(function (createdOffensivePower) {
+//     console.log('New Offensive Power', createdOffensivePower);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Offensive Power', error);
+//   });
 
-offensivePowers.create({
-  name: 'Fervent Despoilation',
-  cooldownTime: 180,
-  requirement: 'Command Center',
-  description: 'Mobs of Cannon Fodder Militia invade the Map, Attacking your Enemies',
-})
-  .then(function (createdOffensivePower) {
-    console.log('New Offensive Power', createdOffensivePower);
-  })
-  .catch(function (err) {
-    console.log('ERROR with adding new Offensive Power', error);
-  });
+// offensivePowers.create({
+//   name: 'Fervent Despoilation',
+//   cooldownTime: 180,
+//   requirement: 'Command Center',
+//   description: 'Mobs of Cannon Fodder Militia invade the Map, Attacking your Enemies',
+// })
+//   .then(function (createdOffensivePower) {
+//     console.log('New Offensive Power', createdOffensivePower);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Offensive Power', error);
+//   });
 
-offensivePowers.create({
-  name: 'Spirit of Oblivion',
-  cooldownTime: 300,
-  requirement: 'Committee 871 Headquarters',
-  description: 'Flying Drones Swarm a Large Area, Melting all who Stand in their Way',
-})
-  .then(function (createdOffensivePower) {
-    console.log('New Offensive Power', createdOffensivePower);
-  })
-  .catch(function (err) {
-    console.log('ERROR with adding new Offensive Power', error);
-  });
+// offensivePowers.create({
+//   name: 'Spirit of Oblivion',
+//   cooldownTime: 300,
+//   requirement: 'Committee 871 Headquarters',
+//   description: 'Flying Drones Swarm a Large Area, Melting all who Stand in their Way',
+// })
+//   .then(function (createdOffensivePower) {
+//     console.log('New Offensive Power', createdOffensivePower);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Offensive Power', error);
+//   });
 
-offensivePowers.create({
-  name: 'March of Tyranny',
-  cooldownTime: 300,
-  requirement: 'Committee 871 Headquarters',
-  description: 'All Troops within an Area become Invulnerable for 10 Seconds',
-})
-  .then(function (createdOffensivePower) {
-    console.log('New Offensive Power', createdOffensivePower);
-  })
-  .catch(function (err) {
-    console.log('ERROR with adding new Offensive Power', error);
-  });
+// offensivePowers.create({
+//   name: 'March of Tyranny',
+//   cooldownTime: 300,
+//   requirement: 'Committee 871 Headquarters',
+//   description: 'All Troops within an Area become Invulnerable for 10 Seconds',
+// })
+//   .then(function (createdOffensivePower) {
+//     console.log('New Offensive Power', createdOffensivePower);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Offensive Power', error);
+//   });
 
-offensivePowers.create({
-  name: 'Edict of Annihilation',
-  cooldownTime: 480,
-  requirement: 'Despotic Annihilator',
-  description: 'Fires the Despotic Annihilator to Destroy All in an Area',
-})
-  .then(function (createdOffensivePower) {
-    console.log('New Offensive Power', createdOffensivePower);
-  })
-  .catch(function (err) {
-    console.log('ERROR with adding new Offensive Power', error);
-  });
+// offensivePowers.create({
+//   name: 'Edict of Annihilation',
+//   cooldownTime: 480,
+//   requirement: 'Despotic Annihilator',
+//   description: 'Fires the Despotic Annihilator to Destroy All in an Area',
+// })
+//   .then(function (createdOffensivePower) {
+//     console.log('New Offensive Power', createdOffensivePower);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Offensive Power', error);
+//   });
 
 module.exports = server;
