@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   baseBuildings.init({
+    name: DataTypes.STRING,
     hp: DataTypes.INTEGER,
     buildTime: DataTypes.INTEGER,
     description: DataTypes.STRING,

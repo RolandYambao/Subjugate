@@ -126,16 +126,29 @@ const server = app.listen(PORT, () => {
 //     console.log('ERROR with adding new Faction Buildings', error);
 //   });
 
-factionPowers.create({
-  offensive: 'Offensive Powers',
-  defensive: 'Defensive Powers',
-  status: 'Status Powers'
+// factionPowers.create({
+//   offensive: 'Offensive Powers',
+//   defensive: 'Defensive Powers',
+//   status: 'Status Powers'
+// })
+//   .then(function (createdFactionPowers) {
+//     console.log('New Faction Powers', createdFactionPowers);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Faction Powers', error);
+//   });
+
+groundUnits.create({
+  name: 'Something',
+  hp: '10',
+  attack: 'Defensive Powers',
+  description: 'Status Powers'
 })
-  .then(function (createdFactionPowers) {
-    console.log('New Faction Powers', createdFactionPowers);
+  .then(function (createdGroundUnit) {
+    console.log('New Ground Unit', createdGroundUnit);
   })
   .catch(function (err) {
-    console.log('ERROR with adding new Faction Powers', error);
+    console.log('ERROR with adding new Ground Unit', error);
   });
 
 module.exports = server;

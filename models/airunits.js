@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   airUnits.init({
+    name: DataTypes.STRING,
     hp: DataTypes.INTEGER,
     attack: DataTypes.INTEGER,
     description: DataTypes.STRING,

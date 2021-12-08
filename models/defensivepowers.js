@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   defensivePowers.init({
+    name: DataTypes.STRING,
     cooldownTime: DataTypes.INTEGER,
     requirement: DataTypes.STRING,
     description: DataTypes.STRING,
