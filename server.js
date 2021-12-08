@@ -6,6 +6,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
+const methodOverride = require('method-override');
 
 const {
   factions,
@@ -27,6 +28,7 @@ const {
 const SECRET_SESSION = process.env.SECRET_SESSION;
 console.log(SECRET_SESSION);
 
+app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 
 app.use(require('morgan')('dev'));
@@ -88,16 +90,28 @@ const server = app.listen(PORT, () => {
 //     console.log('ERROR with adding new Factions', error);
 //   });
 
-factionTraits.create({
-  firstFaction: 'Legions of Tyranny',
-  secondFaction: 'Eldritch Annihilators',
-  thirdFaction: 'The Faceless Ones'
+// factionTraits.create({
+//   units: 'Units',
+//   buildings: 'Buildings',
+//   supportPowers: 'Support Powers'
+// })
+//   .then(function (createdFactionTraits) {
+//     console.log('New Faction Traits', createdFactionTraits);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Faction Traits', error);
+//   });
+
+factionUnits.create({
+  ground: 'Ground Units',
+  naval: 'Naval Units',
+  air: 'Air Units'
 })
-  .then(function (createdFactions) {
-    console.log('New Factions', createdFactions);
+  .then(function (createdFactionUnits) {
+    console.log('New Faction Units', createdFactionUnits);
   })
   .catch(function (err) {
-    console.log('ERROR with adding new Factions', error);
+    console.log('ERROR with adding new Faction Units', error);
   });
 
 module.exports = server;
