@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   factionBuildings.init({
     base: DataTypes.STRING,
     production: DataTypes.STRING,
-    defense: DataTypes.STRING,
+    defensive: DataTypes.STRING,
     traitId: DataTypes.INTEGER
   }, {
     sequelize,
