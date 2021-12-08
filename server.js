@@ -41,9 +41,9 @@ app.use(session({
   saveUninitialized: true    // If we have a new session, we save it, therefore making that true
 }));
 
-app.get('/', function (req, res) {
-  res.json({ message: 'Welcome to Subjugate' });
-});
+// app.get('/', function (req, res) {
+//   res.json({ message: 'Welcome to Subjugate' });
+// });
 
 app.use(flash());
 

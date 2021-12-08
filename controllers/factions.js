@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const { Faction } = require("../models");
+const { factions } = require("../models");
 
 // Get Route
 router.get('/', function (req, res) {
-    Faction.findAll()
+    factions.findAll()
         .then(function (factionList) {
             res.render('factions/index', { factions: factionList });
         })

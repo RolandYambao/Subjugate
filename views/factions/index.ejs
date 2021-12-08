@@ -10,6 +10,8 @@
     <% for( let index = 0; index < factions.length; index++ ) { %>
         <% let a = factions[index]; %> 
         <% a = a.toJSON() %>
-        <p><%= a.name %></p>
+        <p><%= a.firstFaction %></p>
+        <p><%= a.secondFaction %></p>
+        <p><%= a.thirdFaction %></p>
     <% } %>
 </body>
