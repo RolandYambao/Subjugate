@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faction Support Powers</title>
+</head>
+<body>
+    <% if (currentUser) { %>
+        <% for( let index = 0; index < factionPowers.length; index++ ) { %>
+        <% let a = factionPowers[index]; %> 
+        <% a = a.toJSON() %>
+        <p style="margin-bottom:0;"><%= a.offensive %></p>
+        <a href="/offensivePowers">View Offensive Support Powers</a><br><br>
+        <p style="margin-bottom:0;"><%= a.defensive %></p>
+        <a href="/defensivePowers">View Defensive Support Powers</a><br><br>
+        <p style="margin-bottom:0;"><%= a.status %></p>
+        <a href="/statusPowers">View Status Support Powers</a><br><br>
+        <% } %>
+    <% } %>
+</body>

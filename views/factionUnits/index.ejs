@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faction Units</title>
+</head>
+<body>
+    <% if (currentUser) { %>
+        <% for( let index = 0; index < factionUnits.length; index++ ) { %>
+        <% let a = factionUnits[index]; %> 
+        <% a = a.toJSON() %>
+        <p style="margin-bottom:0;"><%= a.ground %></p>
+        <a href="/groundUnits">View Ground Units</a><br><br>
+        <p style="margin-bottom:0;"><%= a.naval %></p>
+        <a href="/navalUnits">View Naval Units</a><br><br>
+        <p style="margin-bottom:0;"><%= a.air %></p>
+        <a href="/airUnits">View Air Units</a><br><br>
+        <% } %>
+    <% } %>
+</body>

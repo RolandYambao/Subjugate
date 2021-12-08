@@ -7,11 +7,16 @@
     <title>Faction Traits</title>
 </head>
 <body>
-    <% for( let index = 0; index < factionTraits.length; index++ ) { %>
+    <% if (currentUser) { %>
+        <% for( let index = 0; index < factionTraits.length; index++ ) { %>
         <% let a = factionTraits[index]; %> 
         <% a = a.toJSON() %>
-        <p><%= a.units %></p>
-        <p><%= a.buildings %></p>
-        <p><%= a.supportPowers %></p>
+        <p style="margin-bottom:0;"><%= a.units %></p>
+        <a href="/factionUnits">See All</a><br><br>
+        <p style="margin-bottom:0;"><%= a.buildings %></p>
+        <a href="/factionBuildings">See All</a><br><br>
+        <p style="margin-bottom:0;"><%= a.supportPowers %></p>
+        <a href="/factionPowers">See All</a><br><br>
+        <% } %>
     <% } %>
 </body>

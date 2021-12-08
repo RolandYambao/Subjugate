@@ -71,6 +71,9 @@ app.get('/profile', isLoggedIn, (req, res) => {
 app.use('/auth', require('./controllers/auth'));
 app.use('/factions', require('./controllers/factions'));
 app.use('/factionTraits', require('./controllers/factionTraits'));
+app.use('/factionUnits', require('./controllers/factionUnits'));
+app.use('/factionBuildings', require('./controllers/factionBuildings'));
+app.use('/factionPowers', require('./controllers/factionPowers'));
 
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {
