@@ -68,8 +68,8 @@ app.get('/profile', isLoggedIn, (req, res) => {
 });
 
 // IMPORT my CONTROLLERS
-// app.use('/auth', require('./controllers/auth'));
-// app.use('/factions', require('./controllers/factions'));
+app.use('/auth', require('./controllers/auth'));
+app.use('/factions', require('./controllers/factions'));
 
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {
