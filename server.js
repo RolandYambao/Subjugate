@@ -138,17 +138,69 @@ const server = app.listen(PORT, () => {
 //     console.log('ERROR with adding new Faction Powers', error);
 //   });
 
-groundUnits.create({
-  name: 'Something',
-  hp: '10',
-  attack: 'Defensive Powers',
-  description: 'Status Powers'
-})
-  .then(function (createdGroundUnit) {
-    console.log('New Ground Unit', createdGroundUnit);
-  })
-  .catch(function (err) {
-    console.log('ERROR with adding new Ground Unit', error);
-  });
+// groundUnits.create({
+//   name: 'Servilepod',
+//   hp: 10,
+//   attack: 5,
+//   description: 'Selectively Bred Arthropod Cannon Fodder'
+// })
+//   .then(function (createdGroundUnit) {
+//     console.log('New Ground Unit', createdGroundUnit);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Ground Unit', error);
+//   });
+
+// groundUnits.create({
+//   name: 'Substitutes',
+//   hp: 20,
+//   attack: 15,
+//   description: 'Human Infantry Serving in Place of their Masters'
+// })
+//   .then(function (createdGroundUnit) {
+//     console.log('New Ground Unit', createdGroundUnit);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Ground Unit', error);
+//   });
+
+// groundUnits.create({
+//   name: 'Eviserators',
+//   hp: 100,
+//   attack: 35,
+//   description: 'A Vessel for Blades and Carnage'
+// })
+//   .then(function (createdGroundUnit) {
+//     console.log('New Ground Unit', createdGroundUnit);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Ground Unit', error);
+//   });
+
+// groundUnits.create({
+//   name: 'Masterminds',
+//   hp: 150,
+//   attack: 0,
+//   description: 'A Diplomatic Machine, used for Making Friends'
+// })
+//   .then(function (createdGroundUnit) {
+//     console.log('New Ground Unit', createdGroundUnit);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Ground Unit', error);
+//   });
+
+// groundUnits.create({
+//   name: 'Adjudicator',
+//   hp: 300,
+//   attack: 100,
+//   description: 'A Vehicle of Pure Annihilation'
+// })
+//   .then(function (createdGroundUnit) {
+//     console.log('New Ground Unit', createdGroundUnit);
+//   })
+//   .catch(function (err) {
+//     console.log('ERROR with adding new Ground Unit', error);
+//   });
 
 module.exports = server;
