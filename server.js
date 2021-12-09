@@ -76,6 +76,9 @@ app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile', { id, name, email });
 });
 
+const printData = require('./myModule.js');
+printData.printData();
+
 // IMPORT my CONTROLLERS
 app.use('/auth', require('./controllers/auth'));
 app.use('/factions', require('./controllers/factions'));
