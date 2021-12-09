@@ -28,7 +28,7 @@
         <% a = a.toJSON() %>
         <br>
         <p style="margin-bottom:0;"><%= a.content %></p>
-        <form method="POST" action="/airComments/<%= airComments[index] %>/?_method=DELETE">
+        <form method="POST" action="/airComments/<%= airComments[index].id %>/?_method=DELETE">
             <input type="submit" value="Delete Comment">
         </form>
         <% } %> 
