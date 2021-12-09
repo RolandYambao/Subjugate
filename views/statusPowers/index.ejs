@@ -16,5 +16,26 @@
         <p style="margin-bottom:0;"><%= 'Requirement: ' + a.requirement %></p>
         <p><%= 'Description: ' + a.description %></p>
         <% } %>
+
+        <form method="POST" action="/statusComments">
+            <label for="content">Comment</label>
+            <input type="text" name="content">
+            <input type="submit">
+        </form>
+
+        <% for( let index = 0; index < statusComments.length; index++ ) { %>
+        <% let a = statusComments[index]; %> 
+        <% a = a.toJSON() %>
+        <br>
+        <p style="margin-bottom:0;"><%= a.content %></p>
+        <form method="POST" action="/statusComments/<%= statusComments[index].id %>/?_method=DELETE">
+            <input type="submit" value="Delete">
+        </form>
+        <form method="POST" action="/statusComments/<%= statusComments[index].id %>/?_method=PUT">
+            <input type="text" name="content" value="<%= statusComments.content %>">
+            <input type="submit" value="Edit">
+        </form>
+        <% } %> 
+
     <% } %>
 </body>
