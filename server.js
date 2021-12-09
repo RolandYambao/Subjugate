@@ -78,14 +78,22 @@ app.use('/factionPowers', require('./controllers/factionPowers'));
 app.use('/groundUnits', require('./controllers/groundUnits'));
 app.use('/navalUnits', require('./controllers/navalUnits'));
 app.use('/airUnits', require('./controllers/airUnits'));
-
 app.use('/baseBuildings', require('./controllers/baseBuildings'));
 app.use('/productionBuildings', require('./controllers/productionBuildings'));
 app.use('/defensiveBuildings', require('./controllers/defensiveBuildings'));
-
 app.use('/offensivePowers', require('./controllers/offensivePowers'));
 app.use('/defensivePowers', require('./controllers/defensivePowers'));
 app.use('/statusPowers', require('./controllers/statusPowers'));
+
+app.use('/groundComments', require('./controllers/groundComments'));
+app.use('/navalComments', require('./controllers/navalComments'));
+app.use('/airComments', require('./controllers/airComments'));
+app.use('/baseComments', require('./controllers/baseComments'));
+app.use('/productionComments', require('./controllers/productionComments'));
+app.use('/defensiveBuildComments', require('./controllers/defensiveBuildComments'));
+app.use('/offensiveComments', require('./controllers/offensiveComments'));
+app.use('/defensivePowComments', require('./controllers/defensivePowComments'));
+app.use('/statusComments', require('./controllers/statusComments'));
 
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {
