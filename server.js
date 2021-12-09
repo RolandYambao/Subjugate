@@ -75,6 +75,18 @@ app.use('/factionUnits', require('./controllers/factionUnits'));
 app.use('/factionBuildings', require('./controllers/factionBuildings'));
 app.use('/factionPowers', require('./controllers/factionPowers'));
 
+app.use('/groundUnits', require('./controllers/groundUnits'));
+app.use('/navalUnits', require('./controllers/navalUnits'));
+app.use('/airUnits', require('./controllers/airUnits'));
+
+app.use('/baseBuildings', require('./controllers/baseBuildings'));
+app.use('/productionBuildings', require('./controllers/productionBuildings'));
+app.use('/defensiveBuildings', require('./controllers/defensiveBuildings'));
+
+app.use('/offensivePowers', require('./controllers/offensivePowers'));
+app.use('/defensivePowers', require('./controllers/defensivePowers'));
+app.use('/statusPowers', require('./controllers/statusPowers'));
+
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${PORT} 🎧`);
