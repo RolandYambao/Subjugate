@@ -26,8 +26,8 @@
         <% for( let index = 0; index < airComments.length; index++ ) { %>
         <% let a = airComments[index]; %> 
         <% a = a.toJSON() %>
-        <p style="margin-bottom:0;"><%= 'Comment: ' + a.content %></p>
-        <% } %>
+        <p style="margin-bottom:0;"><%= a.content %></p>
+        <% } %> 
         
     <% } %>
 </body>
