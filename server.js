@@ -23,6 +23,15 @@ const {
   offensivePowers,
   defensivePowers,
   statusPowers,
+  groundComments,
+  navalComments,
+  airComments,
+  baseComments,
+  productionComments,
+  defensiveBuildComments,
+  offensiveComments,
+  defensivePowComments,
+  statusComments,
 } = require("./models");
 
 const SECRET_SESSION = process.env.SECRET_SESSION;

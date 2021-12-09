@@ -16,5 +16,18 @@
         <p style="margin-bottom:0;"><%= 'Attack: ' + a.attack %></p>
         <p><%= 'Description: ' + a.description %></p>
         <% } %>
+
+        <form method="POST" action="/airComments">
+            <label for="content">Comment</label>
+            <input type="text" name="content">
+            <input type="submit">
+        </form>
+
+        <% for( let index = 0; index < airComments.length; index++ ) { %>
+        <% let a = airComments[index]; %> 
+        <% a = a.toJSON() %>
+        <p style="margin-bottom:0;"><%= 'Comment: ' + a.content %></p>
+        <% } %>
+        
     <% } %>
 </body>

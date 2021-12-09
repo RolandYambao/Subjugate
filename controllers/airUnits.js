@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { airUnits } = require("../models");
+const { airComments } = require("../models");
 
 // Get Route
 router.get('/', function (req, res) {
