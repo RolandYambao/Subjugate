@@ -87,19 +87,18 @@ router.post('/', function (req, res) {
 //         });
 // });
 
-// // Delete
-// router.delete('/:id', function (req, res) {
-//     console.log('ID HERE', req.params.id);
-//     let airCommentIndex = Number(req.params.id);
-//     airComments.destroy({ where: { id: airCommentIndex } })
-//         .then(function (response) {
-//             console.log('COMMENT DELETED', response);
-//             res.redirect('/airComments');
-//         })
-//         .catch(function (error) {
-//             console.log('ERROR', error);
-//             res.render('404', { message: 'Comment was not deleted, please try again....' });
-//         });
-// });
+// Delete
+router.delete('/:id', function (req, res) {
+    let airCommentIndex = Number(req.params.id);
+    airComments.destroy({ where: { id: airCommentIndex } })
+        .then(function (response) {
+            console.log('COMMENT DELETED', response);
+            res.redirect('/airUnits');
+        })
+        .catch(function (error) {
+            console.log('ERROR', error);
+            res.render('404', { message: 'Comment was not deleted, please try again....' });
+        });
+});
 
 module.exports = router;

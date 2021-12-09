@@ -26,7 +26,11 @@
         <% for( let index = 0; index < airComments.length; index++ ) { %>
         <% let a = airComments[index]; %> 
         <% a = a.toJSON() %>
+        <br>
         <p style="margin-bottom:0;"><%= a.content %></p>
+        <form method="POST" action="/airComments/<%= airComments[index] %>/?_method=DELETE">
+            <input type="submit" value="Delete Comment">
+        </form>
         <% } %> 
         
     <% } %>
