@@ -16,5 +16,26 @@
         <p style="margin-bottom:0;"><%= 'Build Time: ' + a.buildTime %></p>
         <p><%= 'Description: ' + a.description %></p>
         <% } %>
+
+        <form method="POST" action="/productionComments">
+            <label for="content">Comment</label>
+            <input type="text" name="content">
+            <input type="submit">
+        </form>
+
+        <% for( let index = 0; index < productionComments.length; index++ ) { %>
+        <% let a = productionComments[index]; %> 
+        <% a = a.toJSON() %>
+        <br>
+        <p style="margin-bottom:0;"><%= a.content %></p>
+        <form method="POST" action="/productionComments/<%= productionComments[index].id %>/?_method=DELETE">
+            <input type="submit" value="Delete">
+        </form>
+        <form method="POST" action="/productionComments/<%= productionComments[index].id %>/?_method=PUT">
+            <input type="text" name="content" value="<%= productionComments.content %>">
+            <input type="submit" value="Edit">
+        </form>
+        <% } %> 
+
     <% } %>
 </body>
