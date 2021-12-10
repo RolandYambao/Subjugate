@@ -7,7 +7,19 @@
 
     <input type="submit" value="Log In">
 
-    <input id="country" type="button" value="Country" name="country" required>
-
 </form>
-  
+
+<button type="button" id="country">Country</button>
+<p id="countryText"></p>
+
+<script>
+    document.getElementById("country").addEventListener("click", function () {
+        fetch("https://api.country.is/")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (country) {
+                document.getElementById("countryText").innerText = country.country;
+            })
+    });
+</script>

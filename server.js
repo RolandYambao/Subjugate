@@ -8,11 +8,8 @@ const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
 const methodOverride = require('method-override');
 
-// const getCountry = document.getElementById("country");
-// const printCountry = require('./myModule.js');
-// getCountry.addEventListener("click", function () {
-//   printCountry.printCountry();
-// })
+const printCountry = require('./myModule.js');
+printCountry.printCountry();
 
 const {
   factions,
