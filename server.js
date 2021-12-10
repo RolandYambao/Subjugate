@@ -8,9 +8,6 @@ const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
 const methodOverride = require('method-override');
 
-const printCountry = require('./myModule.js');
-printCountry.printCountry();
-
 const {
   factions,
   factionTraits,
