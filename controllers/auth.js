@@ -4,6 +4,9 @@ const passport = require("../config/ppConfig");
 
 const { User } = require('../models');
 
+const printData = require('../myModule.js');
+printData.printData();
+
 router.get("/signup", (req, res) => {
   res.render("auth/signup");
 });
