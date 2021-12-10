@@ -96,13 +96,17 @@
         </nav> -->
         <!-- END NAV -->
 
+        <div class="columns">
+            <div class="column has-text-centered">
+                <h1 class="title" style="color: ghostwhite;">Bulma Card Layout Template</h1><br>
+            </div>
+        </div>
+        
         <div class="container">
+                <% for( let index = 0; index < groundUnits.length; index++ ) { %>
+                <% let a = groundUnits[index]; %> 
+                <% a = a.toJSON() %>
             <div class="section">
-                <div class="columns">
-                    <div class="column has-text-centered">
-                        <h1 class="title" style="color: ghostwhite;">Bulma Card Layout Template</h1><br>
-                    </div>
-                </div>
                 <div id="app" class="row columns is-multiline">
                     <div v-for="card in cardData" key="card.id" class="column is-4">
                         <div class="card large">
@@ -119,17 +123,13 @@
                                         </figure>
                                     </div>
                                     <div class="media-content">
-                                        <p class="title is-4 no-padding">{{card.user.title}}</p>
-                                        <!-- <p>
-                                            <span class="title is-6">
-                                                <a :href=`http://twitter.com/${card.user.handle}`> {{card.user.handle}}
-                                                </a> </span>
-                                        </p> -->
-                                        <!-- <p class="subtitle is-6">{{card.user.title}}</p> -->
+                                        <p class="title is-4 no-padding"><%= a.name %></p>
                                     </div>
                                 </div>
                                 <div class="content">
-                                    {{card.content}}
+                                    <p style="margin-bottom:0;"><%= 'Hitpoints: ' + a.hp %></p>
+                                    <p style="margin-bottom:0;"><%= 'Attack: ' + a.attack %></p>
+                                    <p><%= 'Description: ' + a.description %></p>
                                     <div class="background-icon"><span class="icon-twitter"></span></div>
                                 </div>
                             </div>
@@ -137,8 +137,9 @@
                     </div>
                 </div>
             </div>
+            <% } %>
         </div>
-        
+
         <form method="POST" action="/groundComments">
             <label for="content">Comment</label>
             <input type="text" name="content">
@@ -180,7 +181,7 @@
         <script src="../js/cardsData.js"></script>
 
         <!-- Using Vue to populate cards to reduce redundant code -->
-        <script>
+        <!-- <script>
             var app = new Vue({
                 el: '#app',
                 data: {
@@ -188,7 +189,7 @@
                 }
             })
 
-        </script>
+        </script> -->
         <% } %>
 </body>
 
