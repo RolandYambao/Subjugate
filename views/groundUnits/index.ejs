@@ -57,9 +57,14 @@
         body {
             text-align: center;
             color: white;
+            background-color: black;
+        }
+        .footer {
+            background: #301934;
         }
         h1 {
             padding-bottom: 0px;
+            margin-bottom: 0px;
         }
     </style>
     
@@ -69,7 +74,7 @@
     <% if (currentUser) { %>
         <div class="columns">
             <div class="column has-text-centered">
-                <h1 class="title" style="color: ghostwhite;">Ground Units</h1><br>
+                <h1 class="title" style="color: ghostwhite;">Ground Units</h1>
             </div>
         </div>
         
@@ -224,7 +229,7 @@
         </div>
 
         <form method="POST" action="/groundComments">
-            <label for="content">Comment</label>
+            <label for="content" id="comment" >Comment</label>
             <input type="text" name="content">
             <input type="submit">
         </form>
