@@ -90,6 +90,7 @@
 </head>
 
 <body>
+    <!-- Navigation Bar -->
     <% if (currentUser) { %>
         <nav class="navbar">
             <div class="container">
@@ -111,12 +112,14 @@
             </div>
         </nav>
 
+        <!-- Title -->
         <div class="columns">
             <div class="column has-text-centered">
                 <h1 class="title" style="color: ghostwhite;">Ground Units</h1>
             </div>
         </div>
 
+        <!-- Unit Cards -->
         <div class="container">
             <% let a=groundUnits[0]; %>
                 <% a=a.toJSON() %>
@@ -307,6 +310,7 @@
                     </div>
         </div>
 
+        <!-- Comment System -->
         <form method="POST" action="/groundComments">
             <label for="content">Comment</label>
             <input type="text" name="content">
@@ -331,6 +335,7 @@
                     </div>
                     <% } %>
 
+                        <!-- Footer -->
                         <footer class="footer">
                             <div class="container">
                                 <div class="content has-text-centered">
@@ -345,7 +350,6 @@
                                 </div>
                             </div>
                         </footer>
-                        <!-- <script src="../js/cardsData.js"></script> -->
                         <% } %>
 </body>
 
