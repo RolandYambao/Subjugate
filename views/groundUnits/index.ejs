@@ -47,8 +47,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ground Unit Cars</title>
+    <title>Ground Unit Cards</title>
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/cards.css">
 
     <style>
@@ -75,6 +76,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        #deleteButton {
+            margin-right: 5px;
         }
 
         .footer {
@@ -317,7 +322,7 @@
                     </p>
                     <div id="postedComment">
                         <form method="POST" action="/groundComments/<%= groundComments[index].id %>/?_method=DELETE">
-                            <input type="submit" value="Delete">
+                            <input type="submit" id="deleteButton" value="Delete">
                         </form>
                         <form method="POST" action="/groundComments/<%= groundComments[index].id %>/?_method=PUT">
                             <input type="text" name="content" value="<%= groundComments.content %>">
