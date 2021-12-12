@@ -57,235 +57,293 @@
         .navbar {
             background-color: #301934;
         }
+
         h1 {
             margin-top: 50px;
         }
+
         body {
             text-align: center;
             color: white;
             background-color: black;
         }
+
+        #comment {
+            background-color: white;
+            margin-bottom: 10px;
+        }
+
+        #postedComment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .footer {
             background: #301934;
         }
     </style>
-    
+
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="container">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-              <p><strong>Subjugate</strong></p>
-            </a>
-          </div>
-          <div id="navbarMenu" class="navbar-menu">
-            <div class="navbar-end">
-              <a class="navbar-item" href="/">
-                Home
-              </a>
-              <a class="navbar-item" href="/profile">
-                Profile
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
     <% if (currentUser) { %>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="/">
+                        <p><strong>Subjugate</strong></p>
+                    </a>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item" href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item" href="/profile">
+                            Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
         <div class="columns">
             <div class="column has-text-centered">
                 <h1 class="title" style="color: ghostwhite;">Ground Units</h1>
             </div>
         </div>
-        
+
         <div class="container">
-            <% let a = groundUnits[0]; %> 
-            <% a = a.toJSON() %>
-            <div class="section">
-                <div id="app" class="row columns is-centered">
-                    <div v-for="card in cardData" key="card.id" class="column">
-                        <div class="card large">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="https://i.imgur.com/MSs5NsI.png" alt="Image">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-4 no-padding"><%= a.name %></p>
+            <% let a=groundUnits[0]; %>
+                <% a=a.toJSON() %>
+                    <div class="section">
+                        <div id="app" class="row columns is-centered">
+                            <div v-for="card in cardData" key="card.id" class="column">
+                                <div class="card large">
+                                    <div class="card-image">
+                                        <figure class="image">
+                                            <img src="https://i.imgur.com/MSs5NsI.png" alt="Image">
+                                        </figure>
                                     </div>
-                                </div>
-                                <div class="content">
-                                    <p style="margin-bottom:0;"><%= 'Hitpoints: ' + a.hp %></p>
-                                    <p style="margin-bottom:0;"><%= 'Attack: ' + a.attack %></p>
-                                    <p><%= 'Description: ' + a.description %></p>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-content">
+                                                <p class="title is-4 no-padding">
+                                                    <%= a.name %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Hitpoints: ' + a.hp %>
+                                            </p>
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Attack: ' + a.attack %>
+                                            </p>
+                                            <p>
+                                                <%= 'Description: ' + a.description %>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </div>
 
         <div class="container">
-            <% a = groundUnits[1]; %> 
-            <% a = a.toJSON() %>
-            <div class="section">
-                <div id="app" class="row columns is-centered">
-                    <div v-for="card in cardData" key="card.id" class="column">
-                        <div class="card large">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="https://i.imgur.com/cfawPwu.jpeg" alt="Image">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-4 no-padding"><%= a.name %></p>
+            <% a=groundUnits[1]; %>
+                <% a=a.toJSON() %>
+                    <div class="section">
+                        <div id="app" class="row columns is-centered">
+                            <div v-for="card in cardData" key="card.id" class="column">
+                                <div class="card large">
+                                    <div class="card-image">
+                                        <figure class="image">
+                                            <img src="https://i.imgur.com/cfawPwu.jpeg" alt="Image">
+                                        </figure>
                                     </div>
-                                </div>
-                                <div class="content">
-                                    <p style="margin-bottom:0;"><%= 'Hitpoints: ' + a.hp %></p>
-                                    <p style="margin-bottom:0;"><%= 'Attack: ' + a.attack %></p>
-                                    <p><%= 'Description: ' + a.description %></p>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-content">
+                                                <p class="title is-4 no-padding">
+                                                    <%= a.name %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Hitpoints: ' + a.hp %>
+                                            </p>
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Attack: ' + a.attack %>
+                                            </p>
+                                            <p>
+                                                <%= 'Description: ' + a.description %>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </div>
 
         <div class="container">
-            <% a = groundUnits[2]; %> 
-            <% a = a.toJSON() %>
-            <div class="section">
-                <div id="app" class="row columns is-centered">
-                    <div v-for="card in cardData" key="card.id" class="column">
-                        <div class="card large">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="https://i.imgur.com/XEp3bk2.jpeg" alt="Image">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-4 no-padding"><%= a.name %></p>
+            <% a=groundUnits[2]; %>
+                <% a=a.toJSON() %>
+                    <div class="section">
+                        <div id="app" class="row columns is-centered">
+                            <div v-for="card in cardData" key="card.id" class="column">
+                                <div class="card large">
+                                    <div class="card-image">
+                                        <figure class="image">
+                                            <img src="https://i.imgur.com/XEp3bk2.jpeg" alt="Image">
+                                        </figure>
                                     </div>
-                                </div>
-                                <div class="content">
-                                    <p style="margin-bottom:0;"><%= 'Hitpoints: ' + a.hp %></p>
-                                    <p style="margin-bottom:0;"><%= 'Attack: ' + a.attack %></p>
-                                    <p><%= 'Description: ' + a.description %></p>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-content">
+                                                <p class="title is-4 no-padding">
+                                                    <%= a.name %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Hitpoints: ' + a.hp %>
+                                            </p>
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Attack: ' + a.attack %>
+                                            </p>
+                                            <p>
+                                                <%= 'Description: ' + a.description %>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </div>
 
         <div class="container">
-            <% a = groundUnits[3]; %> 
-            <% a = a.toJSON() %>
-            <div class="section">
-                <div id="app" class="row columns is-centered">
-                    <div v-for="card in cardData" key="card.id" class="column">
-                        <div class="card large">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="https://i.imgur.com/LELBG5o.png" alt="Image">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-4 no-padding"><%= a.name %></p>
+            <% a=groundUnits[3]; %>
+                <% a=a.toJSON() %>
+                    <div class="section">
+                        <div id="app" class="row columns is-centered">
+                            <div v-for="card in cardData" key="card.id" class="column">
+                                <div class="card large">
+                                    <div class="card-image">
+                                        <figure class="image">
+                                            <img src="https://i.imgur.com/LELBG5o.png" alt="Image">
+                                        </figure>
                                     </div>
-                                </div>
-                                <div class="content">
-                                    <p style="margin-bottom:0;"><%= 'Hitpoints: ' + a.hp %></p>
-                                    <p style="margin-bottom:0;"><%= 'Attack: ' + a.attack %></p>
-                                    <p><%= 'Description: ' + a.description %></p>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-content">
+                                                <p class="title is-4 no-padding">
+                                                    <%= a.name %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Hitpoints: ' + a.hp %>
+                                            </p>
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Attack: ' + a.attack %>
+                                            </p>
+                                            <p>
+                                                <%= 'Description: ' + a.description %>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </div>
 
         <div class="container">
-            <% a = groundUnits[4]; %> 
-            <% a = a.toJSON() %>
-            <div class="section">
-                <div id="app" class="row columns is-centered">
-                    <div v-for="card in cardData" key="card.id" class="column">
-                        <div class="card large">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="https://i.imgur.com/hX8FS8U.jpeg" alt="Image">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-4 no-padding"><%= a.name %></p>
+            <% a=groundUnits[4]; %>
+                <% a=a.toJSON() %>
+                    <div class="section">
+                        <div id="app" class="row columns is-centered">
+                            <div v-for="card in cardData" key="card.id" class="column">
+                                <div class="card large">
+                                    <div class="card-image">
+                                        <figure class="image">
+                                            <img src="https://i.imgur.com/hX8FS8U.jpeg" alt="Image">
+                                        </figure>
                                     </div>
-                                </div>
-                                <div class="content">
-                                    <p style="margin-bottom:0;"><%= 'Hitpoints: ' + a.hp %></p>
-                                    <p style="margin-bottom:0;"><%= 'Attack: ' + a.attack %></p>
-                                    <p><%= 'Description: ' + a.description %></p>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-content">
+                                                <p class="title is-4 no-padding">
+                                                    <%= a.name %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Hitpoints: ' + a.hp %>
+                                            </p>
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Attack: ' + a.attack %>
+                                            </p>
+                                            <p>
+                                                <%= 'Description: ' + a.description %>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </div>
 
         <form method="POST" action="/groundComments">
-            <label for="content" id="comment" >Comment</label>
+            <label for="content">Comment</label>
             <input type="text" name="content">
-            <input type="submit">
+            <input type="submit" id="comment">
         </form>
 
-        <% for( let index = 0; index < groundComments.length; index++ ) { %>
-        <% let a = groundComments[index]; %> 
-        <% a = a.toJSON() %>
-        <br>
-        <p style="margin-bottom:0;"><%= a.content %></p>
-        <form method="POST" action="/groundComments/<%= groundComments[index].id %>/?_method=DELETE">
-            <input type="submit" value="Delete">
-        </form>
-        <form method="POST" action="/groundComments/<%= groundComments[index].id %>/?_method=PUT">
-            <input type="text" name="content" value="<%= groundComments.content %>">
-            <input type="submit" value="Edit">
-        </form>
-        <% } %> 
-        
-        <footer class="footer">
-            <div class="container">
-                <div class="content has-text-centered">
-                    <div class="soc">
-                        <a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
-                    </div>
-                    <p>
-                        <strong>Subjugate</strong> by <a>Blind Games Studio</a>.
+        <% for( let index=0; index < groundComments.length; index++ ) { %>
+            <% let a=groundComments[index]; %>
+                <% a=a.toJSON() %>
+                    <br>
+                    <p style="margin-bottom:0;">
+                        <%= a.content %>
                     </p>
-                </div>
-            </div>
-        </footer>
-        <!-- <script src="../js/cardsData.js"></script> -->
-        <% } %>
+                    <div id="postedComment">
+                        <form method="POST" action="/groundComments/<%= groundComments[index].id %>/?_method=DELETE">
+                            <input type="submit" value="Delete">
+                        </form>
+                        <form method="POST" action="/groundComments/<%= groundComments[index].id %>/?_method=PUT">
+                            <input type="text" name="content" value="<%= groundComments.content %>">
+                            <input type="submit" value="Edit">
+                        </form>
+                    </div>
+                    <% } %>
+
+                        <footer class="footer">
+                            <div class="container">
+                                <div class="content has-text-centered">
+                                    <div class="soc">
+                                        <a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+                                    </div>
+                                    <p>
+                                        <strong>Subjugate</strong> by <a>Blind Games Studio</a>.
+                                    </p>
+                                </div>
+                            </div>
+                        </footer>
+                        <!-- <script src="../js/cardsData.js"></script> -->
+                        <% } %>
 </body>
 
 </html>
