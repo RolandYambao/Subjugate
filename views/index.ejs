@@ -34,8 +34,13 @@
         background-color: black;
     }
 
+    #pleaseSignUp {
+        background-color: #301934;
+    }
+
     #viewFactions {
-        font-size: 30px;
+        background-color: #301934;
+        font-size: 100px;
     }
 </style>
 
@@ -45,7 +50,9 @@
         <h2>=][=</h2>
         <h3>The Future of Strategy Games</h3>
         <h4>By Blind Games Studio</h4>
-        <h1>Please Signup or Login</h1>
+        <footer class="footer">
+            <h1 id="pleaseSignUp">Please Signup or Login</h1>
+        </footer>
         <% } %>
 
             <% if (currentUser) { %>
@@ -75,6 +82,8 @@
                 <h2>=][=</h2>
                 <h3>The Future of Strategy Games</h3>
                 <h4>By Blind Games Studio</h4>
-                <a href="/factions" id="viewFactions">View All Factions</a><br>
+                <footer class="footer">
+                    <h1 id="viewFactions"><a href="/factions">View All Factions</a></h1>
+                </footer>
                 <% } %>
 </body>
