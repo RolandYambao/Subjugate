@@ -1,13 +1,69 @@
-<form action="/auth/signup" method="POST">
-    <label for="new-email">Email</label>
-    <input id="new-email" type="email" name="email" required>
-  
-    <label for="new-name">Name</label>
-    <input id="new-name" type="text" name="name" required>
-  
-    <label for="new-password">Password</label>
-    <input id="new-password" type="password" name="password" required>
-  
-    <input type="submit" value="Sign up">
-</form>
-  
+<Style>
+    h1 {
+        color: white;
+        text-align: center;
+        background-color: black;
+        font-size: 100px;
+    }
+
+    h2 {
+        color: white;
+        text-align: center;
+        background-color: black;
+        font-size: 25px;
+    }
+
+    h3 {
+        color: white;
+        text-align: center;
+        background-color: black;
+    }
+
+    body {
+        color: black;
+        text-align: center;
+    }
+
+    #signUp {
+        color: white;
+        background-color: indigo;
+    }
+
+    #country {
+        color: white;
+        background-color: indigo;
+    }
+</Style>
+
+<body>
+    <h1>Subjugate</h1>
+    <h2>The Future of Strategy Games</h2>
+    <h3>By Blind Games Studio</h3>
+    <br>
+    <form action="/auth/signup" method="POST">
+        <label for="new-email">Email</label>
+        <input id="new-email" type="email" name="email" required>
+
+        <label for="new-name">Name</label>
+        <input id="new-name" type="text" name="name" required>
+
+        <label for="new-password">Password</label>
+        <input id="new-password" type="password" name="password" required>
+
+        <input type="submit" id="signUp" value="Sign up">
+    </form>
+    <br>
+    <button type="button" id="country">Search Server Location (By Country)</button> <span id="countryText"></span>
+</body>
+
+<script>
+    document.getElementById("country").addEventListener("click", function () {
+        fetch("https://api.country.is/")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (country) {
+                document.getElementById("countryText").innerText = "Server Location: " + country.country;
+            })
+    });
+</script>

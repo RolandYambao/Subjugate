@@ -8,9 +8,11 @@
 </style>
 
 <body>
-    <h1>Please Signup or Login</h1>
-
-    <% if (currentUser) { %>
-        <a href="/factions">View All Factions </a><br>
+    <% if (!currentUser) { %>
+        <h1>Please Signup or Login</h1>
         <% } %>
+
+            <% if (currentUser) { %>
+                <a href="/factions">View All Factions </a><br>
+                <% } %>
 </body>
