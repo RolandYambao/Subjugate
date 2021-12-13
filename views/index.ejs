@@ -5,6 +5,16 @@
         background-color: black;
         font-size: 150px;
     }
+
+    body {
+        color: white;
+        text-align: center;
+        background-color: black;
+    }
+
+    #viewFactions {
+        font-size: 50px;
+    }
 </style>
 
 <body>
@@ -13,6 +23,25 @@
         <% } %>
 
             <% if (currentUser) { %>
-                <a href="/factions">View All Factions </a><br>
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar-brand">
+                            <a class="navbar-item" href="/">
+                                <p><strong>Subjugate</strong></p>
+                            </a>
+                        </div>
+                        <div id="navbarMenu" class="navbar-menu">
+                            <div class="navbar-end">
+                                <a class="navbar-item" href="/auth/signup">
+                                    Signup
+                                </a>
+                                <a class="navbar-item" href="/auth/login">
+                                    Login
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <a href="/factions" id="viewFactions">View All Factions</a><br>
                 <% } %>
 </body>
