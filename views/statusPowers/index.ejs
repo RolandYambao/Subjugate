@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -38,4 +38,243 @@
         <% } %> 
 
     <% } %>
+</body> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Status Power Cards</title>
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/cards.css">
+
+    <style>
+        .navbar {
+            background-color: #301934;
+        }
+
+        h1 {
+            margin-top: 50px;
+        }
+
+        body {
+            text-align: center;
+            color: white;
+            background-color: black;
+        }
+
+        #comment {
+            background-color: white;
+            margin-bottom: 10px;
+        }
+
+        #postedComment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #deleteButton {
+            margin-right: 5px;
+        }
+
+        .footer {
+            background: #301934;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <% if (currentUser) { %>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="/">
+                        <p><strong>Subjugate</strong></p>
+                    </a>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item" href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item" href="/profile">
+                            Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Title -->
+        <div class="columns">
+            <div class="column has-text-centered">
+                <h1 class="title" style="color: ghostwhite;">Status Powers</h1>
+            </div>
+        </div>
+
+        <!-- Unit Cards -->
+        <div class="container">
+            <% let a=statusPowers[0]; %>
+                <% a=a.toJSON() %>
+                    <div class="section">
+                        <div id="app" class="row columns is-centered">
+                            <div v-for="card in cardData" key="card.id" class="column">
+                                <div class="card large">
+                                    <div class="card-image">
+                                        <figure class="image">
+                                            <img src="https://i.imgur.com/MSs5NsI.png" alt="Image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-content">
+                                                <p class="title is-4 no-padding">
+                                                    <%= a.name %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Hitpoints: ' + a.cooldownTime %>
+                                            </p>
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Build Time (Seconds): ' + a.requirement %>
+                                            </p>
+                                            <p>
+                                                <%= 'Description: ' + a.description %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="container">
+            <% a=statusPowers[1]; %>
+                <% a=a.toJSON() %>
+                    <div class="section">
+                        <div id="app" class="row columns is-centered">
+                            <div v-for="card in cardData" key="card.id" class="column">
+                                <div class="card large">
+                                    <div class="card-image">
+                                        <figure class="image">
+                                            <img src="https://i.imgur.com/cfawPwu.jpeg" alt="Image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-content">
+                                                <p class="title is-4 no-padding">
+                                                    <%= a.name %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Hitpoints: ' + a.cooldownTime %>
+                                            </p>
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Build Time (Seconds): ' + a.requirement %>
+                                            </p>
+                                            <p>
+                                                <%= 'Description: ' + a.description %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="container">
+            <% a=statusPowers[2]; %>
+                <% a=a.toJSON() %>
+                    <div class="section">
+                        <div id="app" class="row columns is-centered">
+                            <div v-for="card in cardData" key="card.id" class="column">
+                                <div class="card large">
+                                    <div class="card-image">
+                                        <figure class="image">
+                                            <img src="https://i.imgur.com/XEp3bk2.jpeg" alt="Image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-content">
+                                                <p class="title is-4 no-padding">
+                                                    <%= a.name %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Hitpoints: ' + a.cooldownTime %>
+                                            </p>
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Build Time (Seconds): ' + a.requirement %>
+                                            </p>
+                                            <p>
+                                                <%= 'Description: ' + a.description %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+        <!-- Comment System -->
+        <form method="POST" action="/statusComments">
+            <label for="content">Comment</label>
+            <input type="text" name="content">
+            <input type="submit" id="comment">
+        </form>
+
+        <% for( let index=0; index < statusComments.length; index++ ) { %>
+            <% let a=statusComments[index]; %>
+                <% a=a.toJSON() %>
+                    <br>
+                    <p style="margin-bottom:0;">
+                        <%= a.content %>
+                    </p>
+                    <div id="postedComment">
+                        <form method="POST" action="/statusComments/<%= statusComments[index].id %>/?_method=DELETE">
+                            <input type="submit" id="deleteButton" value="Delete">
+                        </form>
+                        <form method="POST" action="/statusComments/<%= statusComments[index].id %>/?_method=PUT">
+                            <input type="text" name="content" value="<%= statusComments.content %>">
+                            <input type="submit" value="Edit">
+                        </form>
+                    </div>
+                    <% } %>
+
+                        <!-- Footer -->
+                        <footer class="footer">
+                            <div class="container">
+                                <div class="content has-text-centered">
+                                    <div class="soc">
+                                        <a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+                                    </div>
+                                    <p>
+                                        <strong>Subjugate</strong> by <a>Blind Games Studio</a>.
+                                    </p>
+                                </div>
+                            </div>
+                        </footer>
+                        <% } %>
 </body>
+
+</html>
