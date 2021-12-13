@@ -1,15 +1,51 @@
-<form action="/auth/login" method="POST">
-    <label for="auth-email">Email</label>
-    <input id="auth-email" type="email" name="email" required>
+<Style>
+    h1 {
+        color: white;
+        text-align: center;
+        background-color: black;
+        font-size: 100px;
+    }
 
-    <label for="auth-password">Password</label>
-    <input id="auth-password" type="password" name="password" required>
+    h2 {
+        color: white;
+        text-align: center;
+        background-color: black;
+        font-size: 25px;
+    }
 
-    <input type="submit" value="Log In">
+    body {
+        color: black;
+        text-align: center;
+    }
 
-</form>
-<br>
-<button type="button" id="country">Search Server Location (By Country)</button> <span id="countryText"></span>
+    #logIn {
+        color: white;
+        background-color: indigo;
+    }
+
+    #country {
+        color: white;
+        background-color: indigo;
+    }
+</Style>
+
+<body>
+    <h1>Subjugate</h1>
+    <h2>The Future of Strategy Games</h2>
+    <br>
+    <form action="/auth/login" method="POST">
+        <label for="auth-email">Email</label>
+        <input id="auth-email" type="email" name="email" required>
+
+        <label for="auth-password">Password</label>
+        <input id="auth-password" type="password" name="password" required>
+
+        <input type="submit" id="logIn" value="Log In">
+
+    </form>
+    <br>
+    <button type="button" id="country">Search Server Location (By Country)</button> <span id="countryText"></span>
+</body>
 
 <script>
     document.getElementById("country").addEventListener("click", function () {
