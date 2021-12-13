@@ -57,7 +57,7 @@
             background-color: #301934;
         }
 
-        h1 {
+        #mainTitle {
             margin-top: 50px;
         }
 
@@ -84,6 +84,13 @@
 
         .footer {
             background: #301934;
+        }
+
+        #signUpNow {
+            color: white;
+            text-align: center;
+            background-color: black;
+            font-size: 100px;
         }
     </style>
 
@@ -115,7 +122,7 @@
         <!-- Title -->
         <div class="columns">
             <div class="column has-text-centered">
-                <h1 class="title" style="color: ghostwhite;">Production Buildings</h1>
+                <h1 class="title" style="color: ghostwhite;" id="mainTitle">Production Buildings</h1>
             </div>
         </div>
 
@@ -287,10 +294,12 @@
                         <%= a.content %>
                     </p>
                     <div id="postedComment">
-                        <form method="POST" action="/productionComments/<%= productionComments[index].id %>/?_method=DELETE">
+                        <form method="POST"
+                            action="/productionComments/<%= productionComments[index].id %>/?_method=DELETE">
                             <input type="submit" id="deleteButton" value="Delete">
                         </form>
-                        <form method="POST" action="/productionComments/<%= productionComments[index].id %>/?_method=PUT">
+                        <form method="POST"
+                            action="/productionComments/<%= productionComments[index].id %>/?_method=PUT">
                             <input type="text" name="content" value="<%= productionComments.content %>">
                             <input type="submit" value="Edit">
                         </form>
@@ -313,6 +322,9 @@
                             </div>
                         </footer>
                         <% } %>
+                            <% if (!currentUser) { %>
+                                <h1 id="signUpNow">Please Signup or Login</h1>
+                                <% } %>
 </body>
 
 </html>
