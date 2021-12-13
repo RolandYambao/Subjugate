@@ -14,6 +14,20 @@
         .navbar {
             background-color: #301934;
         }
+
+        h1 {
+            margin-top: 50px;
+        }
+
+        body {
+            text-align: center;
+            color: white;
+            background-color: black;
+        }
+
+        .footer {
+            background: #301934;
+        }
     </style>
 </head>
 
@@ -41,6 +55,13 @@
             </div>
         </nav>
 
+        <!-- Title -->
+        <div class="columns">
+            <div class="column has-text-centered">
+                <h1 class="title" style="color: ghostwhite;">Factions</h1>
+            </div>
+        </div>
+
         <div class="container">
             <% let a=factions[0]; %>
                 <% a=a.toJSON() %>
@@ -57,8 +78,9 @@
                                         <div class="media">
                                             <div class="media-content">
                                                 <p class="title is-4 no-padding">
-                                                    <%= a.firstFaction %>
-                                                        <a href="/factionTraits">View Legions of Tyranny</a>
+                                                    <%= a.firstFaction %> <br>
+                                                        <a href="/factionTraits"><small>View Legions of
+                                                                Tyranny</small></a>
                                                 </p>
                                             </div>
                                         </div>
@@ -120,21 +142,22 @@
                 </div>
             </div>
         </div>
-        <% } %>
 
-            <!-- Footer -->
-            <footer class="footer">
-                <div class="container">
-                    <div class="content has-text-centered">
-                        <div class="soc">
-                            <a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
-                        </div>
-                        <p>
-                            <strong>Subjugate</strong> by <a>Blind Games Studio</a>.
-                        </p>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="content has-text-centered">
+                    <div class="soc">
+                        <a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
                     </div>
+                    <p>
+                        <strong>Subjugate</strong> by <a>Blind Games Studio</a>.
+                    </p>
                 </div>
-            </footer>
+            </div>
+        </footer>
+
+        <% } %>
 </body>
