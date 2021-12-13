@@ -21,7 +21,7 @@ router.post('/', function (req, res) {
     })
         .then(function (newAirComment) {
             newAirComment = newAirComment.toJSON();
-            res.redirect('/airUnits');
+            res.redirect('/airUnits#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);
@@ -37,7 +37,7 @@ router.put('/:id', function (req, res) {
     }, { where: { id: airCommentIndex } })
         .then(function (response) {
             console.log('AFTER UPDATE', response);
-            res.redirect('/airUnits');
+            res.redirect('/airUnits#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);
@@ -51,7 +51,7 @@ router.delete('/:id', function (req, res) {
     airComments.destroy({ where: { id: airCommentIndex } })
         .then(function (response) {
             console.log('COMMENT DELETED', response);
-            res.redirect('/airUnits');
+            res.redirect('/airUnits#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);
