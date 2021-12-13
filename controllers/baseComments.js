@@ -21,7 +21,7 @@ router.post('/', function (req, res) {
     })
         .then(function (newBaseComment) {
             newBaseComment = newBaseComment.toJSON();
-            res.redirect('/baseBuildings');
+            res.redirect('/baseBuildings#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);
@@ -37,7 +37,7 @@ router.put('/:id', function (req, res) {
     }, { where: { id: baseCommentIndex } })
         .then(function (response) {
             console.log('AFTER UPDATE', response);
-            res.redirect('/baseBuildings');
+            res.redirect('/baseBuildings#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);
@@ -51,7 +51,7 @@ router.delete('/:id', function (req, res) {
     baseComments.destroy({ where: { id: baseCommentIndex } })
         .then(function (response) {
             console.log('COMMENT DELETED', response);
-            res.redirect('/baseBuildings');
+            res.redirect('/baseBuildings#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);

@@ -21,7 +21,7 @@ router.post('/', function (req, res) {
     })
         .then(function (newProductionComments) {
             newProductionComments = newProductionComments.toJSON();
-            res.redirect('/productionBuildings');
+            res.redirect('/productionBuildings#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);
@@ -37,7 +37,7 @@ router.put('/:id', function (req, res) {
     }, { where: { id: productionCommentIndex } })
         .then(function (response) {
             console.log('AFTER UPDATE', response);
-            res.redirect('/productionBuildings');
+            res.redirect('/productionBuildings#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);
@@ -51,7 +51,7 @@ router.delete('/:id', function (req, res) {
     productionComments.destroy({ where: { id: productionCommentIndex } })
         .then(function (response) {
             console.log('COMMENT DELETED', response);
-            res.redirect('/productionBuildings');
+            res.redirect('/productionBuildings#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);

@@ -21,7 +21,7 @@ router.post('/', function (req, res) {
     })
         .then(function (newOffensiveComments) {
             newOffensiveComments = newOffensiveComments.toJSON();
-            res.redirect('/offensivePowers');
+            res.redirect('/offensivePowers#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);
@@ -37,7 +37,7 @@ router.put('/:id', function (req, res) {
     }, { where: { id: offensiveCommentIndex } })
         .then(function (response) {
             console.log('AFTER UPDATE', response);
-            res.redirect('/offensivePowers');
+            res.redirect('/offensivePowers#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);
@@ -51,7 +51,7 @@ router.delete('/:id', function (req, res) {
     offensiveComments.destroy({ where: { id: offensiveCommentIndex } })
         .then(function (response) {
             console.log('COMMENT DELETED', response);
-            res.redirect('/offensivePowers');
+            res.redirect('/offensivePowers#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);

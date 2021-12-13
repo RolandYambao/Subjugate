@@ -21,7 +21,7 @@ router.post('/', function (req, res) {
     })
         .then(function (newNavalComment) {
             newNavalComment = newNavalComment.toJSON();
-            res.redirect('/navalUnits');
+            res.redirect('/navalUnits#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);
@@ -37,7 +37,7 @@ router.put('/:id', function (req, res) {
     }, { where: { id: navalCommentIndex } })
         .then(function (response) {
             console.log('AFTER UPDATE', response);
-            res.redirect('/navalUnits');
+            res.redirect('/navalUnits#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);
@@ -51,7 +51,7 @@ router.delete('/:id', function (req, res) {
     navalComments.destroy({ where: { id: navalCommentIndex } })
         .then(function (response) {
             console.log('COMMENT DELETED', response);
-            res.redirect('/navalUnits');
+            res.redirect('/navalUnits#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);

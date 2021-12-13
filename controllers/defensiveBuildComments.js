@@ -21,7 +21,7 @@ router.post('/', function (req, res) {
     })
         .then(function (newDefensiveBuildComment) {
             newDefensiveBuildComment = newDefensiveBuildComment.toJSON();
-            res.redirect('/defensiveBuildings');
+            res.redirect('/defensiveBuildings#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);
@@ -37,7 +37,7 @@ router.put('/:id', function (req, res) {
     }, { where: { id: defensiveBuildCommentIndex } })
         .then(function (response) {
             console.log('AFTER UPDATE', response);
-            res.redirect('/defensiveBuildings');
+            res.redirect('/defensiveBuildings#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);
@@ -51,7 +51,7 @@ router.delete('/:id', function (req, res) {
     defensiveBuildComments.destroy({ where: { id: defensiveBuildCommentIndex } })
         .then(function (response) {
             console.log('COMMENT DELETED', response);
-            res.redirect('/defensiveBuildings');
+            res.redirect('/defensiveBuildings#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);

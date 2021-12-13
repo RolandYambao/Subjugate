@@ -21,7 +21,7 @@ router.post('/', function (req, res) {
     })
         .then(function (newStatusComments) {
             newStatusComments = newStatusComments.toJSON();
-            res.redirect('/statusPowers');
+            res.redirect('/statusPowers#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);
@@ -37,7 +37,7 @@ router.put('/:id', function (req, res) {
     }, { where: { id: statusCommentIndex } })
         .then(function (response) {
             console.log('AFTER UPDATE', response);
-            res.redirect('/statusPowers');
+            res.redirect('/statusPowers#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);
@@ -51,7 +51,7 @@ router.delete('/:id', function (req, res) {
     statusComments.destroy({ where: { id: statusCommentIndex } })
         .then(function (response) {
             console.log('COMMENT DELETED', response);
-            res.redirect('/statusPowers');
+            res.redirect('/statusPowers#comment');
         })
         .catch(function (error) {
             console.log('ERROR', error);
