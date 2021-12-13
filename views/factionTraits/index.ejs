@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,4 +19,179 @@
         <a href="/factionPowers">See All</a><br><br>
         <% } %>
     <% } %>
+</body> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Faction Traits</title>
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/cards.css">
+
+    <style>
+        .navbar {
+            background-color: #301934;
+        }
+
+        #mainTitle {
+            margin-top: 50px;
+        }
+
+        body {
+            text-align: center;
+            color: white;
+            background-color: black;
+        }
+
+        .footer {
+            background: #301934;
+        }
+
+        #signUpNow {
+            color: white;
+            text-align: center;
+            background-color: black;
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <% if (currentUser) { %>
+
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="/">
+                        <p><strong>Subjugate</strong></p>
+                    </a>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item" href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item" href="/profile">
+                            Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Title -->
+        <div class="columns">
+            <div class="column has-text-centered">
+                <h1 class="title" style="color: ghostwhite;" id="mainTitle">Entity Types</h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <% let a=factionTraits[0]; %>
+                <% a=a.toJSON() %>
+                    <div class="section">
+                        <div id="app" class="row columns is-centered">
+                            <div v-for="card in cardData" key="card.id" class="column">
+                                <div class="card large">
+                                    <div class="card-image">
+                                        <figure class="image">
+                                            <img src="https://i.imgur.com/MSs5NsI.png" alt="Image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-content">
+                                                <p class="title is-4 no-padding">
+                                                    <%= a.units %> <br>
+                                                        <a href="/factionUnits">See All</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <div id="app" class="row columns is-centered">
+                    <div v-for="card in cardData" key="card.id" class="column">
+                        <div class="card large">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="https://i.imgur.com/cfawPwu.jpeg" alt="Image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-content">
+                                        <p class="title is-4 no-padding">
+                                            <%= a.buildings %> <br>
+                                                <a href="/factionBuildings">See All</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <div id="app" class="row columns is-centered">
+                    <div v-for="card in cardData" key="card.id" class="column">
+                        <div class="card large">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="https://i.imgur.com/XEp3bk2.jpeg" alt="Image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-content">
+                                        <p class="title is-4 no-padding">
+                                            <%= a.supportPowers %> <br>
+                                                <a href="/factionPowers">See All</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="content has-text-centered">
+                    <div class="soc">
+                        <a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+                    </div>
+                    <p>
+                        <strong>Subjugate</strong> by <a>Blind Games Studio</a>.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <% } %>
+            <% if (!currentUser) { %>
+                <h1 id="signUpNow">Please Signup or Login</h1>
+                <% } %>
 </body>
+
+</html>
