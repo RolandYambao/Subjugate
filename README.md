@@ -5,16 +5,16 @@ This is a website from the fictional Blind Games Studio, a game company that is 
 Subjugate is practice for the creation of video game websites to show off their upcoming products to generate interest.
 
 ## Technologies:
-This website utilizes the three front end languages of HTML, CSS, and Javascript. It also utilizes EJS, Node.js, and especially SQL databases. The program uses the Model-View-Controller design pattern where different Models are created, commanded in Controllers, and viewed in Views. Various other dependencies are present that where utilized for singular and/or minor utilizations, such as method-override being used to override a few methods in an EJS file.
+This website utilizes the three front end languages of HTML, CSS, and JavaScript. It also utilizes EJS, Node.js, and especially SQL databases. The program uses the Model-View-Controller design pattern where different Models are created, commanded in Controllers, and viewed in Views. Various other dependencies are present that where utilized for singular and/or minor utilizations, such as method-override being used to override a few methods in an EJS file.
 
 ## Development Approach:
 A Pre-Made template that has a functioning authentication system is the starting foundation of the program. From there many models are made to represent the respective factions, units, and other assets inside this hypothetical game that can only be accessed when a user creates an account and logs. The aesthetic of the site involves the user clicks on a faction, then clicks on their entity types, then clicks on the sub-type of said entity. An example path would be to click on a faction, select units, then select ground units to see the ground units. The website has many paths to be opened to reach to the last pages where users can comment on the various assets of the faction.
 
 ## Installation:
-Type in  "npm install" in the terminal upon opening this project, this will install all necessary dependencies to ensure its functionality.
+Type in "npm install" in the terminal upon opening this project, this will install all necessary dependencies to ensure its functionality.
 
 ## Unsolved Problems:
-Not really a problem, but the aesthetics cna be imrpoved to appear more professional an dinteresting. Albeit the sharpness of appearance has its own charm.
+Not really a problem, but the aesthetics can be improved to appear more professional and interesting. Albeit the sharpness of appearance has its own charm.
 
 ## Code Snippets:
 1. groundUnits Model - This is the Model for groundUnits, showcasing the ground units of the "Legions of Tyranny" faction.
@@ -524,10 +524,9 @@ module.exports = router;
 </html>
 ~~~
 
-
 ## Screenshot:
-![Alt text](subjugateScreenshot1.png "Subjigate Screenshot #1")
-![Alt text](subjugateScreenshot2.png "Subjigate Screenshot #1")
+![Alt text](subjugateScreenshot1.png "Subjugate Screenshot #1")
+![Alt text](subjugateScreenshot2.png "Subjugate Screenshot #1")
 
 ## Reflections:
 This was a very tedious project and I am not particularly fond of it. Like many database related projects, it has too many steps required to do very little things, hence it is quite frustrating. The end result was interesting but I am not as proud of it as I was with project 1. I don't feel much of a sense of accomplishment with this, it isn't bad, it is merely not satisfying.
