@@ -5,309 +5,529 @@ This is a website from the fictional Blind Games Studio, a game company that is 
 Subjugate is practice for the creation of video game websites to show off their upcoming products to generate interest.
 
 ## Technologies:
-This website utilizes the three front end languages of HTML, CSS, and Javascript. It also utilizes EJS, Node.js, and especially SQL databases. The program uses the Model-View-Controller design pattern where different Models are created, commanded in Controllers, and viewed in Views.
+This website utilizes the three front end languages of HTML, CSS, and Javascript. It also utilizes EJS, Node.js, and especially SQL databases. The program uses the Model-View-Controller design pattern where different Models are created, commanded in Controllers, and viewed in Views. Various other dependencies are present that where utilized for singular and/or minor utilizations, such as method-override being used to override a few methods in an EJS file.
 
 ## Development Approach:
-A Pre-Made template that has a functioning authentication system is the starting foundation of the program. From there many models are made to represents the respective factions, units, and other assets inside this hypothetical game. The aesthetic of the site involves the user clicks on a faction, then clicks on their entity types, then clicks on the sub-type of said entity. An example path would be to click on a faction, select units, then select ground units to see the ground units
+A Pre-Made template that has a functioning authentication system is the starting foundation of the program. From there many models are made to represent the respective factions, units, and other assets inside this hypothetical game that can only be accessed when a user creates an account and logs. The aesthetic of the site involves the user clicks on a faction, then clicks on their entity types, then clicks on the sub-type of said entity. An example path would be to click on a faction, select units, then select ground units to see the ground units. The website has many paths to be opened to reach to the last pages where users can comment on the various assets of the faction.
 
 ## Installation:
 Type in  "npm install" in the terminal upon opening this project, this will install all necessary dependencies to ensure its functionality.
 
 ## Unsolved Problems:
-Not really a problem, but one potential point of improvement is finding ways to make the aesthetics more dynamic, ex. an explosive animation plays upon clicking on a block.
+Not really a problem, but the aesthetics cna be imrpoved to appear more professional an dinteresting. Albeit the sharpness of appearance has its own charm.
 
-## Functions and Code Snippets:
-1. Sound Effect Functions - Various functions that simply play a certain sound effect when a certain event occurs or a button is clicked.
+## Code Snippets:
+1. groundUnits Model - This is the Model for groundUnits, showcasing the ground units of the "Legions of Tyranny" faction.
 ~~~js
-// Functions for Sound Effects
-function machineVoice1Play() {
-    machineVoice1.play();
-    machineVoice1.volume = 0.5;
-}
-function machineVoice2Play() {
-    machineVoice2.play();
-    machineVoice2.volume = 0.5;
-}
-function machineVoice3Play() {
-    machineVoice3.play();
-    machineVoice3.volume = 0.5;
-}
-function machineVoice4Play() {
-    machineVoice4.play();
-    machineVoice4.volume = 0.5;
-}
-function machineVoice5Play() {
-    machineVoice5.play();
-    machineVoice5.volume = 0.5;
-}
-function openFire() {
-    explosion.play();
-    explosion.volume = 0.5;
-}
-~~~
-
-2. typeWriter Function - This function creates the effect of text appearing as if it was being typed by a user.
-~~~js
-// Function for the interesting Typing Effect for the Hints
-function typeWriter(phrase) {
-    for (let i = 0; i < phrase.length; i++) {
-        setTimeout(function () {
-            intelligence.innerHTML += phrase.charAt(i)
-        }, 25 * i);
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class groundUnits extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+      models.groundUnits.belongsTo(models.factionUnits, { foreignKey: 'unitId' });
     }
-}
+  };
+  groundUnits.init({
+    hp: DataTypes.INTEGER,
+    attack: DataTypes.INTEGER,
+    description: DataTypes.STRING,
+    unitId: DataTypes.INTEGER,
+    name: DataTypes.STRING,
+  }, {
+    sequelize,
+    modelName: 'groundUnits',
+  });
+  return groundUnits;
+};
 ~~~
 
-3. stopTyping Function - This function stops all typing when a new transition fo text is about to appear to prevent them from mixing together. It clears all timeouts in the game.
+2. groundUnits Migration - Showcasing the migration code of groundUnits
 ~~~js
-// Function to stop all typing, I found this interesting "Hack" in Stack Overflow
-function stopTyping() {
-    let allTimeouts = setTimeout(" ");
-    for (let i = 0; i < allTimeouts; i++) {
-        clearTimeout(i);
-    }
-    intelligence.innerText = "";
-}
+'use strict';
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('groundUnits', {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER
+      },
+      hp: {
+        type: Sequelize.INTEGER
+      },
+      attack: {
+        type: Sequelize.INTEGER
+      },
+      description: {
+        type: Sequelize.STRING
+      },
+      unitId: {
+        type: Sequelize.INTEGER
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      name: {
+        type: Sequelize.STRING
+      }
+    });
+  },
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable('groundUnits');
+  }
+};
 ~~~
 
-4. nextExplosion Function - This function stops the explosion sound effect and it's placed before a new explosion sound effect is played to keep each click creating a consistent explosion.
+3. groundUnits Controller - The controller of groundUnits, groundComments is nested inside it as the two appear in the same page
 ~~~js
-// Function to stop explosion sound to begin next one
-function nextExplosion() {
-    explosion.pause();
-    explosion.currentTime = 0;
-}
-~~~
+const express = require('express');
+const router = express.Router();
+const { groundUnits } = require("../models");
+const { groundComments } = require("../models");
 
-5. failedAttack Function - This function increases the turn number everytime a button is clicked and calls in the failedMission function to see if you lost.
-~~~js
-// Function for the failure of one Attack
-function failedAttack() {
-    turns++;
-    failedMission();
-}
-~~~
-
-6. Highlight and Darken Functions - Many functions that highlight specific blocks as areas the troublemaker is potentially located in, the darken function is placed on areas that where previously highlighted in turns 4 and 5.
-~~~js
-// Highlight the Western areas if the troublemaker is there
-function highlightWest() {
-    hidingSpot[0].style.borderColor = "red";
-    hidingSpot[0].style.boxShadow = "0 0 10px red";
-    hidingSpot[1].style.borderColor = "red";
-    hidingSpot[1].style.boxShadow = "0 0 10px red";
-    hidingSpot[5].style.borderColor = "red";
-    hidingSpot[5].style.boxShadow = "0 0 10px red";
-    hidingSpot[10].style.borderColor = "red";
-    hidingSpot[10].style.boxShadow = "0 0 10px red";
-    hidingSpot[11].style.borderColor = "red";
-    hidingSpot[11].style.boxShadow = "0 0 10px red";
-}
-
-// Darken the Western areas if the troublemaker is not there
-function darkenWest() {
-    hidingSpot[0].style.borderColor = "indigo";
-    hidingSpot[0].style.boxShadow = "0 0 0 indigo";
-    hidingSpot[1].style.borderColor = "indigo";
-    hidingSpot[1].style.boxShadow = "0 0 0 indigo";
-    hidingSpot[5].style.borderColor = "indigo";
-    hidingSpot[5].style.boxShadow = "0 0 0 indigo";
-    hidingSpot[10].style.borderColor = "indigo";
-    hidingSpot[10].style.boxShadow = "0 0 0 indigo";
-    hidingSpot[11].style.borderColor = "indigo";
-    hidingSpot[11].style.boxShadow = "0 0 0 indigo";
-}
-~~~
-
-7. intel Function - This function analyzes the location of the troublemaker and displays the hints to the player, depending on the turn count.
-~~~js
-// Function for the given hints to the player
-function intel() {
-    if (turns == 2) {
-        intelligence.style.color = "orange";
-        if (computerChoice == 1 || computerChoice == 2 || computerChoice == 6 || computerChoice == 11 || computerChoice == 12) {
-            if (guess == 1) {
-                stopTyping();
-                machineVoice2Play();
-                highlightWest();
-                highlightEast();
-                typeWriter(notCenter);
-            } else if (guess == 2) {
-                stopTyping();
-                machineVoice2Play();
-                highlightWest();
-                highlightEast();
-                typeWriter(notCenter);
-
-            } else {
-                stopTyping();
-                machineVoice2Play();
-                highlightWest();
-                highlightCenter();
-                typeWriter(notEastern);
-            }
-        }
-        if (computerChoice == 4 || computerChoice == 5 || computerChoice == 10 || computerChoice == 14 || computerChoice == 15) {
-            if (guess == 1) {
-                stopTyping();
-                machineVoice2Play();
-                highlightCenter();
-                highlightEast();
-                typeWriter(notWestern);
-            } else if (guess == 2) {
-                stopTyping();
-                machineVoice2Play();
-                highlightWest();
-                highlightEast();
-                typeWriter(notCenter);
-            } else {
-                stopTyping();
-                machineVoice2Play();
-                highlightCenter();
-                highlightEast();
-                typeWriter(notWestern);
-            }
-        }
-        if (computerChoice == 3 || computerChoice == 7 || computerChoice == 8 || computerChoice == 9 || computerChoice == 13) {
-            if (guess == 1) {
-                stopTyping();
-                machineVoice2Play();
-                highlightCenter();
-                highlightEast();
-                typeWriter(notWestern);
-            } else if (guess == 2) {
-                stopTyping();
-                machineVoice2Play();
-                highlightWest();
-                highlightCenter();
-                typeWriter(notEastern);
-            } else {
-                stopTyping();
-                machineVoice2Play();
-                highlightWest();
-                highlightCenter();
-                typeWriter(notEastern);
-            }
-        }
-    }
-    if (turns == 4) {
-        intelligence.style.color = "red";
-        if (computerChoice == 1 || computerChoice == 2 || computerChoice == 6 || computerChoice == 11 || computerChoice == 12) {
-            stopTyping();
-            machineVoice3Play();
-            highlightWest();
-            darkenCenter();
-            darkenEast();
-            typeWriter(lastWestern);
-        }
-        if (computerChoice == 4 || computerChoice == 5 || computerChoice == 10 || computerChoice == 14 || computerChoice == 15) {
-            stopTyping();
-            machineVoice3Play();
-            highlightEast();
-            darkenWest();
-            darkenCenter();
-            typeWriter(lastEastern);
-        }
-        if (computerChoice == 3 || computerChoice == 7 || computerChoice == 8 || computerChoice == 9 || computerChoice == 13) {
-            stopTyping();
-            machineVoice3Play();
-            highlightCenter();
-            darkenWest();
-            darkenEast();
-            typeWriter(lastCenter);
-        }
-    }
-}
-~~~
-
-8. failedMission Function - This function displays the aesthetic presentation once the player fails to destroy the troublemaker after 6 turns.
-~~~js
-// Function for the Failure of the player
-function failedMission() {
-    if (turns == 6) {
-        stopTyping();
-        music.setAttribute("src", "defeatMusic.mp3");
-        music.volume = 0.5;
-        document.getElementById("title").innerHTML = "Oversight".strike();
-        document.getElementById("tower").innerHTML = "&#9760;";
-        backgroundBanner.style.backgroundImage = "url(fire.gif)";
-        backgroundBanner.style.backgroundSize = "100% 100%";
-        camera1.style.display = "none";
-        camera2.style.display = "none";
-        highlightWest();
-        highlightCenter();
-        highlightEast();
-        machineVoice4Play();
-        typeWriter(defeat);
-        for (let i = 0; i < 15; i++) {
-            hidingSpot[i].addEventListener("click", function () {
-                location.reload();
-            })
-        }
-    }
-}
-~~~
-
-9. successfulMission Function - This function displays the aesthetic presentation once the player destroys the troublemaker in time.
-~~~js
-// Function for the Success of the playerSterling Eide
-function successfulMission() {
-    stopTyping();
-    openFire();
-    music.setAttribute("src", "theInnerPartySpeaker.mp3");
-    music.volume = 0.1;
-    machineVoice5Play();
-    typeWriter(victory);
-    intelligence.style.color = "white";
-    darkenWest();
-    darkenCenter();
-    darkenEast();
-    for (let i = 0; i < 15; i++) {
-        hidingSpot[i].addEventListener("click", function () {
-            location.reload();
+// Get Route
+router.get('/', function (req, res) {
+    groundUnits.findAll()
+        .then(function (groundUnitsList) {
+            groundComments.findAll()
+                .then(function (groundCommentsList) {
+                    res.render('groundUnits/index', { groundUnits: groundUnitsList, groundComments: groundCommentsList });
+                })
+                .catch(function (err) {
+                    console.log('ERROR', err);
+                    res.json({ message: 'Error occured, please try again....' });
+                });
         })
-    }
-}
+        .catch(function (err) {
+            console.log('ERROR', err);
+            res.json({ message: 'Error occured, please try again....' });
+        });
+});
+
+module.exports = router;
 ~~~
 
-10. watchTowerSearch Function - This function initiates it all and has many eventlsiteners for clicks.
+4. groundComments Controller - The afformentioned controller of groundComments which has the ability to be created, read, updated, and deleted, unlike groundUnits.
 ~~~js
-// Function for the initiation of the game
-function watchtowerSearch() {
-    machineVoice1Play();
-    typeWriter(scour);
+const express = require('express');
+const router = express.Router();
+const { groundComments } = require("../models");
 
-    intelligence.addEventListener("click", function () {
-        location.reload();
-    })
+// Get Routes
+router.get('/', function (req, res) {
+    groundComments.findAll()
+        .then(function (groundCommentsList) {
+            res.render('groundComments', { groundComments: groundCommentsList });
+        })
+        .catch(function (err) {
+            console.log('ERROR', err);
+            res.json({ message: 'Error occured, please try again....' });
+        });
+});
 
-    hidingSpot[0].addEventListener("click", function () {
-        nextExplosion();
-        openFire();
-        hidingSpot[0].style.backgroundImage = "url(destroyedBuilding.jpg)";
-        hidingSpot[0].style.backgroundSize = "100% 100%";
-        if (computerChoice == 1) {
-            hidingSpot[0].style.backgroundImage = "url(bullseye.png)";
-            hidingSpot[0].style.backgroundSize = "100% 100%";
-            successfulMission();
-        } else {
-            intel();
-            failedAttack();
-        }
+// Post Routes
+router.post('/', function (req, res) {
+    groundComments.create({
+        content: req.body.content,
     })
-    // ....And many more
+        .then(function (newGroundComment) {
+            newGroundComment = newGroundComment.toJSON();
+            res.redirect('/groundUnits#comment');
+        })
+        .catch(function (error) {
+            console.log('ERROR', error);
+            res.render('404', { message: 'Comment was not added, please try again' });
+        });
+});
+
+// Edit
+router.put('/:id', function (req, res) {
+    let groundCommentIndex = Number(req.params.id);
+    groundComments.update({
+        content: req.body.content,
+    }, { where: { id: groundCommentIndex } })
+        .then(function (response) {
+            console.log('AFTER UPDATE', response);
+            res.redirect('/groundUnits#comment');
+        })
+        .catch(function (error) {
+            console.log('ERROR', error);
+            res.render('404', { message: 'Update was not successful. Please try again.' });
+        });
+});
+
+// Delete
+router.delete('/:id', function (req, res) {
+    let groundCommentIndex = Number(req.params.id);
+    groundComments.destroy({ where: { id: groundCommentIndex } })
+        .then(function (response) {
+            console.log('COMMENT DELETED', response);
+            res.redirect('/groundUnits#comment');
+        })
+        .catch(function (error) {
+            console.log('ERROR', error);
+            res.render('404', { message: 'Comment was not deleted, please try again....' });
+        });
+});
+
+module.exports = router;
 ~~~
+
+5. groundUnits index.ejs - The HTML and Styling of groundUnits tha tutilizes EJS to use the data itself for presentation
+~~~html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ground Unit Cards</title>
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/cards.css">
+
+    <style>
+        .navbar {
+            background-color: #301934;
+        }
+
+        #mainTitle {
+            margin-top: 50px;
+        }
+
+        body {
+            text-align: center;
+            color: white;
+            background-color: black;
+        }
+
+        #comment {
+            background-color: white;
+            margin-bottom: 10px;
+        }
+
+        #postedComment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #deleteButton {
+            margin-right: 5px;
+        }
+
+        .footer {
+            background: #301934;
+        }
+
+        #signUpNow {
+            color: white;
+            text-align: center;
+            background-color: black;
+            font-size: 100px;
+        }
+
+        .card {
+            margin: 0 auto;
+            float: none;
+            max-width: 600px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <% if (currentUser) { %>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="/">
+                        <p><strong>Subjugate</strong></p>
+                    </a>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item" href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item" href="/profile">
+                            Profile
+                        </a>
+                        <a class="navbar-item" href="/auth/logout">
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Title -->
+        <div class="columns">
+            <div class="column has-text-centered">
+                <h1 class="title" style="color: ghostwhite;" id="mainTitle">Ground Units</h1>
+            </div>
+        </div>
+
+        <!-- Unit Cards -->
+        <div class="container">
+            <% let a=groundUnits[0]; %>
+                <% a=a.toJSON() %>
+                    <div class="section">
+                        <div id="app" class="row columns is-centered">
+                            <div v-for="card in cardData" key="card.id" class="column">
+                                <div class="card large">
+                                    <div class="card-image">
+                                        <figure class="image">
+                                            <img src="https://i.imgur.com/MSs5NsI.png" alt="Image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-content">
+                                                <p class="title is-4 no-padding">
+                                                    <%= a.name %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Hitpoints: ' + a.hp %>
+                                            </p>
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Attack: ' + a.attack %>
+                                            </p>
+                                            <p>
+                                                <%= 'Description: ' + a.description %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="container">
+            <% a=groundUnits[1]; %>
+                <% a=a.toJSON() %>
+                    <div class="section">
+                        <div id="app" class="row columns is-centered">
+                            <div v-for="card in cardData" key="card.id" class="column">
+                                <div class="card large">
+                                    <div class="card-image">
+                                        <figure class="image">
+                                            <img src="https://i.imgur.com/hX8FS8U.jpeg" alt="Image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-content">
+                                                <p class="title is-4 no-padding">
+                                                    <%= a.name %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Hitpoints: ' + a.hp %>
+                                            </p>
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Attack: ' + a.attack %>
+                                            </p>
+                                            <p>
+                                                <%= 'Description: ' + a.description %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="container">
+            <% a=groundUnits[2]; %>
+                <% a=a.toJSON() %>
+                    <div class="section">
+                        <div id="app" class="row columns is-centered">
+                            <div v-for="card in cardData" key="card.id" class="column">
+                                <div class="card large">
+                                    <div class="card-image">
+                                        <figure class="image">
+                                            <img src="https://i.imgur.com/cfawPwu.jpg" alt="Image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-content">
+                                                <p class="title is-4 no-padding">
+                                                    <%= a.name %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Hitpoints: ' + a.hp %>
+                                            </p>
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Attack: ' + a.attack %>
+                                            </p>
+                                            <p>
+                                                <%= 'Description: ' + a.description %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="container">
+            <% a=groundUnits[3]; %>
+                <% a=a.toJSON() %>
+                    <div class="section">
+                        <div id="app" class="row columns is-centered">
+                            <div v-for="card in cardData" key="card.id" class="column">
+                                <div class="card large">
+                                    <div class="card-image">
+                                        <figure class="image">
+                                            <img src="https://i.imgur.com/XEp3bk2.jpg" alt="Image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-content">
+                                                <p class="title is-4 no-padding">
+                                                    <%= a.name %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Hitpoints: ' + a.hp %>
+                                            </p>
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Attack: ' + a.attack %>
+                                            </p>
+                                            <p>
+                                                <%= 'Description: ' + a.description %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="container">
+            <% a=groundUnits[4]; %>
+                <% a=a.toJSON() %>
+                    <div class="section">
+                        <div id="app" class="row columns is-centered">
+                            <div v-for="card in cardData" key="card.id" class="column">
+                                <div class="card large">
+                                    <div class="card-image">
+                                        <figure class="image">
+                                            <img src="https://i.imgur.com/LELBG5o.png" alt="Image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-content">
+                                                <p class="title is-4 no-padding">
+                                                    <%= a.name %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Hitpoints: ' + a.hp %>
+                                            </p>
+                                            <p style="margin-bottom:0;">
+                                                <%= 'Attack: ' + a.attack %>
+                                            </p>
+                                            <p>
+                                                <%= 'Description: ' + a.description %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+        <!-- Comment System -->
+        <form method="POST" action="/groundComments">
+            <label for="content">Comment</label>
+            <input type="text" name="content">
+            <input type="submit" id="comment">
+        </form>
+
+        <% for( let index=0; index < groundComments.length; index++ ) { %>
+            <% let a=groundComments[index]; %>
+                <% a=a.toJSON() %>
+                    <br>
+                    <p style="margin-bottom:0;">
+                        <%= a.content %>
+                    </p>
+                    <div id="postedComment">
+                        <form method="POST" action="/groundComments/<%= groundComments[index].id %>/?_method=DELETE">
+                            <input type="submit" id="deleteButton" value="Delete">
+                        </form>
+                        <form method="POST" action="/groundComments/<%= groundComments[index].id %>/?_method=PUT">
+                            <input type="text" name="content" value="<%= groundComments.content %>">
+                            <input type="submit" value="Edit">
+                        </form>
+                    </div>
+                    <% } %>
+
+                        <!-- Footer -->
+                        <footer class="footer">
+                            <div class="container">
+                                <div class="content has-text-centered">
+                                    <div class="soc">
+                                        <a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+                                    </div>
+                                    <p>
+                                        <strong>Subjugate</strong> by <a href="/">Blind Games Studio</a>.
+                                    </p>
+                                </div>
+                            </div>
+                        </footer>
+                        <% } %>
+                            <% if (!currentUser) { %>
+                                <h1 id="signUpNow">Please Signup or Login</h1>
+                                <% } %>
+</body>
+
+</html>
+~~~
+
 
 ## Screenshot:
-![Alt text](oversightScreenshot.png "Oversight Screenshot")
-
-## Game Loop:
-1. There is one player versus a computer, the player is the watchtower and the computer is the troublemaker.
-2. The computer will randomly select a number between 1 to 15, each number represents a tile where the troublemaker is hiding in.
-3. The Watchtower is given orders to fire three shots at any space in hope sof hitting the troublemaker.
-4. After three shots, intel is given to the Watchtower telling what directional area the troublemaker is not located in.
-6. After two shots, the Watchtower has one shot left, with one piece of intel stating which directional region the troublemaker is in.
-7. If the Watchtower hits the troublemaker, it wins, if it misses, it loses.
+![Alt text](subjugateScreenshot1.png "Subjigate Screenshot #1")
+![Alt text](subjugateScreenshot2.png "Subjigate Screenshot #1")
 
 ## Reflections:
 I was surprised that so much time can be spent on making sure specific tidbits and aesthetic occurances are properly utilized. For example, the typeWriter function, if multiple sentences are typing at the same time, this can have multiple garbled text morphed together if the player moves through the game too quickly. I had to create a stopTyping function to ensure that the text are not displaying incorrectly. The sound effects as well, stopExplosion was created so that a new explosion sound is played once a block is clicked again, previously if you click another block before an explosion sound finishes, it won't play another sound.
