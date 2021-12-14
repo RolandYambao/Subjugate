@@ -528,31 +528,15 @@ All the other models, views, controllers, and so forth for the other parts of th
 ## Routes
 | Route      | Type       | Description   |
 | :---        |    :----:   |          ---: |
-| /           | GET         | Homepage, search and featured   |
-| /profile   | GET        | User's Profile      |
-| /auth/signup   | GET        | Show Signup Page      |
-| /auth/login   | GET        | Show Login Page      |
-| /auth/logout   | GET        | Logs out of account      |
-| /auth/login   | POST        | Login request      |
-| /auth/signup   | POST        | Create's account from signup page      |
-| /artists   | GET        | Show All Artists in Database      |
-| /artists/setup   | GET        | Artist Account Setup Page      |
-| /artists/:id   | GET        | Specific artist in database      |
-| /artists/setup   | PUT        | Edits artist info in database      |
-| /galleries   | GET        | All galleries in database      |
-| /galleries/setup   | GET        | Set up gallery account      |
-| /galleries/:id   | GET        | One Specific      |
-| /galleries/favorite/:id   | POST        | Gallery adding artwork to favorites      |
-| /galleries/setup   | PUT        |  Edits gallery info in database     |
-| /works   | GET        | All works in database      |
-| /works/create   | GET        | Create work page      |
-| /works/edit/:id   | GET        | Edit work page      |
-| /works/:id   | GET        | Specific work      |
-| /works/create   | POST        | Adding artwork to database      |
-| /works/edit/:idx   | PUT        | Edit work info      |
-| /works/remove   | DELETE        | Remove work from Gallery favorite list      |
-| /works/delete   | DELETE        | Delete work from Database      |
-| /search/results   | GET        | Find Search Results depending on user search      |
+| /           | GET         | Homepage, Logged in Or Not   |
+| /auth/signup           | GET         | Page to Create an Account   |
+| /auth/login           | GET         | Page to Login the Site   |
+| /profile           | GET         | User Profile   |
+| /factions           | GET         | Show the Three Factions   |
+| /factionTraits           | GET         | Show the Three Entity Types of one Faction   |
+| /factionUnits           | GET         | Show the Three Unit Types of one Faction   |
+| /factionBuildings           | GET         | Show the Three Building Types of one Faction   |
+| /factionPowers           | GET         | Show the Three Support Power Types of one Faction   |
 
 ## Screenshot:
 ![Alt text](subjugateScreenshot1.png "Subjugate Screenshot #1")
