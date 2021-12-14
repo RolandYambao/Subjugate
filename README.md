@@ -2,16 +2,16 @@
 This is a website from the fictional Blind Games Studio, a game company that is making a fictional RTS game called "Subjugate". The website showcases the incomplete game, by showing the units, buildings, and support powers of one of the game's factions.
 
 ## Purpose:
-Subjugate is practice for the creation of video game websites to show
+Subjugate is practice for the creation of video game websites to show off their upcoming products to generate interest.
 
 ## Technologies:
-This game utilized the front end languages of HTML, CSS, and JavaScript. It uses a variety of image and sound assets imported from other sources to create the polished aesthetic experience of the game. After forming the divs in HTML, and its organization done in CSS, the JavaScript DOM system was primarily utilized for the user interaction in the game.
+This website utilizes the three front end languages of HTML, CSS, and Javascript. It also utilizes EJS, Node.js, and especially SQL databases. The program uses the Model-View-Controller design pattern where different Models are created, commanded in Controllers, and viewed in Views.
 
 ## Development Approach:
-The code of the game is formed through a variety of functions that perform specific tasks critical for the game operation. All these functions call to each other and there is one starting function the starts game operation. I made it so that the game's many functions become operable only after certain mouse clicks occur on specific blocks. This way the game functions from a button click to button click methodology.
+A Pre-Made template that has a functioning authentication system is the starting foundation of the program. From there many models are made to represents the respective factions, units, and other assets inside this hypothetical game. The aesthetic of the site involves the user clicks on a faction, then clicks on their entity types, then clicks on the sub-type of said entity. An example path would be to click on a faction, select units, then select ground units to see the ground units
 
 ## Installation:
-Simply have all files in this repository be together and open it to a live server, if not go here: https://rolandyambao.github.io/Oversight/
+Type in  "npm install" in the terminal upon opening this project, this will install all necessary dependencies to ensure its functionality.
 
 ## Unsolved Problems:
 Not really a problem, but one potential point of improvement is finding ways to make the aesthetics more dynamic, ex. an explosive animation plays upon clicking on a block.
