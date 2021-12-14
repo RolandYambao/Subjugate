@@ -528,6 +528,8 @@ All the other models, views, controllers, and so forth for the other parts of th
 ## Screenshot:
 ![Alt text](subjugateScreenshot1.png "Subjugate Screenshot #1")
 ![Alt text](subjugateScreenshot2.png "Subjugate Screenshot #1")
+![Alt text](ProjectTwo.draw.io.png "Draw.io")
+![Alt text](ProjectTwoWireframe.png "Wireframe")
 
 ## Reflections:
 This was a very tedious project and I am not particularly fond of it. Like many database related projects, it has too many steps required to do very little things, hence it is quite frustrating. The end result was interesting but I am not as proud of it as I was with project 1. I don't feel much of a sense of accomplishment with this, it isn't bad, it is merely not satisfying.
