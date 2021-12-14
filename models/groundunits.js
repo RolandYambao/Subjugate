@@ -15,11 +15,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   groundUnits.init({
+    name: DataTypes.STRING,
     hp: DataTypes.INTEGER,
     attack: DataTypes.INTEGER,
     description: DataTypes.STRING,
     unitId: DataTypes.INTEGER,
-    name: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'groundUnits',
