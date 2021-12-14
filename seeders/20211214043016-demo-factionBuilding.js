@@ -2,11 +2,11 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkInsert('factionTraits', [
+    await queryInterface.bulkInsert('factionBuildings', [
       {
-        units: 'Units',
-        buildings: 'Buildings',
-        supportPowers: 'Support Powers',
+        base: 'Base Buildings',
+        production: 'Production Buildings',
+        defensive: 'Defense Buildings',
         createdAt: new Date(),
         updatedAt: new Date(),
       }
