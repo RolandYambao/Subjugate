@@ -13,8 +13,32 @@
 </style>
 
 <body>
-    <h1 id="fourOhFour">404</h1>
-    <p id="message">
-        <%= message %>
-    </p>
+    <% if (currentUser) { %>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="/">
+                        <p><strong>Subjugate</strong></p>
+                    </a>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item" href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item" href="/profile">
+                            Profile
+                        </a>
+                        <a class="navbar-item" href="/auth/logout">
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <h1 id="fourOhFour">404</h1>
+        <p id="message">
+            <%= message %>
+        </p>
 </body>
