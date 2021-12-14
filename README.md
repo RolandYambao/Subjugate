@@ -528,6 +528,8 @@ All the other models, views, controllers, and so forth for the other parts of th
 ## Screenshot:
 ![Alt text](subjugateScreenshot1.png "Subjugate Screenshot #1")
 ![Alt text](subjugateScreenshot2.png "Subjugate Screenshot #1")
+
+## Wireframes:
 ![Alt text](ProjectTwo.draw.io.png "Draw.io")
 ![Alt text](ProjectTwoWireframe.png "Wireframe")
 
