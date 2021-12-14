@@ -535,8 +535,17 @@ All the other models, views, controllers, and so forth for the other parts of th
 | /factions           | GET         | Show the Three Factions   |
 | /factionTraits           | GET         | Show the Three Entity Types of one Faction   |
 | /factionUnits           | GET         | Show the Three Unit Types of one Faction   |
+| /groundUnits          | GET         | Show the Ground Units one Faction   |
+| /navalUnits          | GET         | Show the Naval Units one Faction   |
+| /airUnits          | GET         | Show the Air Units one Faction   |
 | /factionBuildings           | GET         | Show the Three Building Types of one Faction   |
+| /baseBuildings           | GET         | Show the Base Buildings of one Faction   |
+| /productionBuildings           | GET         | Show the Base Buildings of one Faction   |
+| /defenseBuildings           | GET         | Show the Base Buildings of one Faction   |
 | /factionPowers           | GET         | Show the Three Support Power Types of one Faction   |
+| /offensivePowers           | GET         | Show the Offensive Powers of one Faction   |
+| /defensivePowers           | GET         | Show the Defensive Powers of one Faction   |
+| /supportPowers           | GET         | Show the Support Powers of one Faction   |
 
 ## Screenshot:
 ![Alt text](subjugateScreenshot1.png "Subjugate Screenshot #1")
