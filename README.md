@@ -554,7 +554,9 @@ All PUT and DELETE route types, for commenting, briefly go to an /:id route befo
 ![Alt text](subjugateScreenshot2.png "Subjugate Screenshot #1")
 
 ## Wireframes:
+OLD
 ![Alt text](ProjectTwo.draw.io.png "Draw.io")
+NEW
 ![Alt text](ProjectTwoWireframe.png "Wireframe")
 
 ## Reflections:
