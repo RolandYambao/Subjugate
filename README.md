@@ -11,7 +11,7 @@ This website utilizes the three front end languages of HTML, CSS, and JavaScript
 A Pre-Made template that has a functioning authentication system is the starting foundation of the program. From there many models are made to represent the respective factions, units, and other assets inside this hypothetical game that can only be accessed when a user creates an account and logs. The aesthetic of the site involves the user clicks on a faction, then clicks on their entity types, then clicks on the sub-type of said entity. An example path would be to click on a faction, select units, then select ground units to see the ground units. The website has many paths to be opened to reach to the last pages where users can comment on the various assets of the faction.
 
 ## Installation:
-Type in "npm install" in the terminal upon opening this project, this will install all necessary dependencies to ensure its functionality.
+Firstly, fork and clone this repository and type "npm install" in the terminal upon opening this project, this will install all necessary dependencies to ensure its functionality.
 
 ## Unsolved Problems:
 Not really a problem, but the aesthetics can be improved to appear more professional and interesting. Albeit the sharpness of appearance has its own charm.
