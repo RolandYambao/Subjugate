@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkInsert('groundUnits', [
+    await queryInterface.bulkInsert('groundUnit', [
       {
         hp: 10,
         attack: 5,
