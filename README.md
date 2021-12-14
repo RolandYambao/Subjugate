@@ -547,6 +547,8 @@ All the other models, views, controllers, and so forth for the other parts of th
 | /defensivePowers           | GET         | Show the Defensive Powers of one Faction   |
 | /supportPowers           | GET         | Show the Support Powers of one Faction   |
 
+All Put and Delete route types, for commenting, briefly go to an /:id route before redirecting back to the respective pages where their comments appear in. For example, groundComments appear under groundUnits.
+
 ## Screenshot:
 ![Alt text](subjugateScreenshot1.png "Subjugate Screenshot #1")
 ![Alt text](subjugateScreenshot2.png "Subjugate Screenshot #1")
