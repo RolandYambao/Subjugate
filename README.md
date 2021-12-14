@@ -579,7 +579,7 @@ This was a very tedious project and I am not particularly fond of it. Like many 
 12. War Thunder Gaijin - Various Images
 13. Various Professional 3D Artists and ArtStation Artists - Various Images
 14. Red Alert 3 EA - One Image
-More Exact Sourcing Present here: https://rolandyambao.imgur.com/all/
+More Exact Sourcing Present here: https://imgur.com/user/rolandyambao
 
 ## Licensing:
 1. All credited content is under the Fair Use Law.
