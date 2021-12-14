@@ -530,18 +530,24 @@ module.exports = router;
 ![Alt text](subjugateScreenshot2.png "Subjigate Screenshot #1")
 
 ## Reflections:
-I was surprised that so much time can be spent on making sure specific tidbits and aesthetic occurances are properly utilized. For example, the typeWriter function, if multiple sentences are typing at the same time, this can have multiple garbled text morphed together if the player moves through the game too quickly. I had to create a stopTyping function to ensure that the text are not displaying incorrectly. The sound effects as well, stopExplosion was created so that a new explosion sound is played once a block is clicked again, previously if you click another block before an explosion sound finishes, it won't play another sound.
+This was a very tedious project and I am not particularly fond of it. Like many database related projects, it has too many steps required to do very little things, hence it is quite frustrating. The end result was interesting but I am not as proud of it as I was with project 1. I don't feel much of a sense of accomplishment with this, it isn't bad, it is merely not satisfying.
 
 ## Credits:
-1. Command & Conquer 3: Tiberium Wars (2007) - Background Music (Gathering Intel) and Defeat Music (Mourning Hour)
-2. 1984 (1984) remixed by Willard Networks - Victory Music (The Inner Party Speaker) remix name: Anthem of City Twenty-Four
-3. Warhammer 40,000: Mechanicus (2020) - Machine Voices
-4. SFX AND STUFF from YouTube - Cannon Sound Effect
-5. Cisco Eng-emojis from Giphy - Security Camera gif
-6. WallpaperAccess - Ruined City Background
-7. Marco Di Lauro on Getty Images - Destroyed Building Image
-8. Acegif - Fire Background on Defeat Screen
-9. Adobe Stock - Red Crosshair Image
+1. iStock Artists - Various Images
+2. VectorStock Artists - Various Images
+3. Command and Conquer Red Alert 2: Yuri's Revenge - Various Images
+4. Supreme Commander 2 - One Image
+5. Anvil Industries - One Image
+6. Villains Fanon Wikia - One Image
+7. Pathfinder - One Image
+8. Royalty Free Photographers - Various Images
+9. Warhammer 40,000 Games Workshop - Various Images
+10. DeviantArtists - Various Images
+11. Blogs - Various Images
+12. War Thunder Gaijin - Various Images
+13. Various Professional 3D Artists and ArtStation Artists - Various Images
+14. Red Alert 3 EA - One Image
+More Exact Sourcing Present here: https://rolandyambao.imgur.com/all/
 
 ## Licensing:
 1. All credited content is under the Fair Use Law.
