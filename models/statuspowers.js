@@ -15,11 +15,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   statusPowers.init({
-    name: DataTypes.STRING,
     cooldownTime: DataTypes.INTEGER,
     requirement: DataTypes.STRING,
     description: DataTypes.STRING,
-    supportPowerId: DataTypes.INTEGER
+    supportPowerId: DataTypes.INTEGER,
+    name: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'statusPowers',

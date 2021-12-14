@@ -15,11 +15,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   productionBuildings.init({
-    name: DataTypes.STRING,
     hp: DataTypes.INTEGER,
     buildTime: DataTypes.INTEGER,
     description: DataTypes.STRING,
-    buildingId: DataTypes.INTEGER
+    buildingId: DataTypes.INTEGER,
+    name: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'productionBuildings',

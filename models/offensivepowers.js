@@ -15,11 +15,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   offensivePowers.init({
-    name: DataTypes.STRING,
     cooldownTime: DataTypes.INTEGER,
     requirement: DataTypes.STRING,
     description: DataTypes.STRING,
-    supportPowerId: DataTypes.INTEGER
+    supportPowerId: DataTypes.INTEGER,
+    name: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'offensivePowers',
