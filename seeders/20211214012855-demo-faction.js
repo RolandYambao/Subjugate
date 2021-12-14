@@ -6,7 +6,9 @@ module.exports = {
       {
         firstFaction: 'Legions of Tyranny',
         secondFaction: 'Eldritch Annihilators',
-        thirdFaction: 'The Faceless Ones'
+        thirdFaction: 'The Faceless Ones',
+        createdAt: new Date(),
+        updatedAt: new Date(),
       }
     ])
     /**
