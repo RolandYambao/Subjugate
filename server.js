@@ -110,6 +110,10 @@ const server = app.listen(PORT, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${PORT} 🎧`);
 });
 
+app.get('*', function (req, res) {
+  res.render('404', { message: 'Page is not found' });
+});
+
 // factions.create({
 //   firstFaction: 'Legions of Tyranny',
 //   secondFaction: 'Eldritch Annihilators',
