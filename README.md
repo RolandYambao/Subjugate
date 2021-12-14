@@ -523,6 +523,7 @@ module.exports = router;
 
 </html>
 ~~~
+All the other models, views, controllers, and so forth for the other parts of the program appear nearly identical to the general template that groundUnits and groundComments utilizes.
 
 ## Screenshot:
 ![Alt text](subjugateScreenshot1.png "Subjugate Screenshot #1")
