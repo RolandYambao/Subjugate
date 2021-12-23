@@ -1,5 +1,5 @@
 const axios = require('axios');
-const API_KEY = "xGU2Bbmq7Bcwi6Oss2t0NTu1igEG_QwrwrysCiHvuxg";
+const API_KEY = "Censored";
 
 const searchTerm = 'mexico';
 
