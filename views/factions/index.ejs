@@ -41,6 +41,10 @@
             float: none;
             max-width: 600px;
         }
+
+        img {
+            object-fit: cover;
+        }
     </style>
 </head>
 
@@ -80,82 +84,88 @@
 
         <!-- Faction Cards -->
         <div class="container">
-            <% let a=factions[0]; %>
-                <% a=a.toJSON() %>
-                    <div class="section">
-                        <div id="app" class="row columns is-centered">
-                            <div v-for="card in cardData" key="card.id" class="column">
-                                <div class="card large">
-                                    <div class="card-image">
-                                        <figure class="image">
-                                            <img src="https://i.imgur.com/RJPDuSY.jpeg" alt="Image">
-                                        </figure>
+            <div class="section">
+                <div class="row columns is-multiline">
+
+                    <div class="column is-4">
+                        <% let a=factions[0]; %>
+                            <% a=a.toJSON() %>
+                                <!-- <div class="section">
+                                    <div class="row columns is-multiline">
+                                        <div v-for="card in cardData" key="card.id" class="column"> -->
+                                            <div class="card large">
+                                                <div class="card-image">
+                                                    <figure class="image is-square">
+                                                        <img src="https://i.imgur.com/RJPDuSY.jpeg" alt="Image">
+                                                    </figure>
+                                                </div>
+                                                <div class="card-content">
+                                                    <div class="media">
+                                                        <div class="media-content">
+                                                            <p class="title is-4 no-padding">
+                                                                <%= a.firstFaction %> <br>
+                                                                    <a href="/factionTraits"><small>View Legions of
+                                                                            Tyranny</small></a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <!-- </div>
                                     </div>
-                                    <div class="card-content">
-                                        <div class="media">
-                                            <div class="media-content">
-                                                <p class="title is-4 no-padding">
-                                                    <%= a.firstFaction %> <br>
-                                                        <a href="/factionTraits"><small>View Legions of
-                                                                Tyranny</small></a>
-                                                </p>
+                                </div> -->
+                    </div>
+                    <div class="column is-4">
+                        <!-- <div class="section">
+                            <div class="row columns is-multiline">
+                                <div v-for="card in cardData" key="card.id" class="column"> -->
+                                    <div class="card large">
+                                        <div class="card-image">
+                                            <figure class="image is-square">
+                                                <img src="https://i.imgur.com/Kf1JGmf.jpeg" alt="Image">
+                                            </figure>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="media">
+                                                <div class="media-content">
+                                                    <p class="title is-4 no-padding">
+                                                        <%= a.secondFaction %>
+                                                            <p>Coming Soon</p>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                <!-- </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
-        </div>
-
-        <div class="container">
-            <div class="section">
-                <div id="app" class="row columns is-centered">
-                    <div v-for="card in cardData" key="card.id" class="column">
-                        <div class="card large">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="https://i.imgur.com/Kf1JGmf.jpeg" alt="Image">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-4 no-padding">
-                                            <%= a.secondFaction %>
-                                                <p>Coming Soon</p>
-                                        </p>
+                    <div class="column is-4">
+                        <!-- <div class="section">
+                            <div class="row columns is-multiline">
+                                <div v-for="card in cardData" key="card.id" class="column"> -->
+                                    <div class="card large">
+                                        <div class="card-image">
+                                            <figure class="image is-square">
+                                                <img src="https://i.imgur.com/akcJBzO.jpeg" alt="Image">
+                                            </figure>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="media">
+                                                <div class="media-content">
+                                                    <p class="title is-4 no-padding">
+                                                        <%= a.thirdFaction %>
+                                                            <p>Coming Soon</p>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                <!-- </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="container">
-            <div class="section">
-                <div id="app" class="row columns is-centered">
-                    <div v-for="card in cardData" key="card.id" class="column">
-                        <div class="card large">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="https://i.imgur.com/akcJBzO.jpeg" alt="Image">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-4 no-padding">
-                                            <%= a.thirdFaction %>
-                                                <p>Coming Soon</p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
