@@ -25,11 +25,18 @@
         color: white;
         text-align: center;
         background-color: black;
+        margin-bottom: 10px;
     }
 
     body {
-        color: black;
+        color: white;
         text-align: center;
+        background-color: black;
+    }
+
+    #auth {
+        background-color: white;
+        color: black;
     }
 
     #signUp {
@@ -41,29 +48,63 @@
         color: white;
         background-color: indigo;
     }
+
+    #firstFooter {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: #301934;
+        color: white;
+    }
+
+    #Subjugate {
+        color: white;
+    }
 </Style>
 
 <body>
     <h1>Subjugate</h1>
+    <br>
     <h2>=][=</h2>
+    <br>
     <h3>The Future of Strategy Games</h3>
+    <br>
     <h4>By Blind Games Studio</h4>
     <br>
-    <form action="/auth/signup" method="POST">
-        <label for="new-email">Email</label>
-        <input id="new-email" type="email" name="email" required>
+    <div id="auth">
+        <br>
+        <form action="/auth/signup" method="POST">
+            <label for="new-email">Email</label>
+            <input id="new-email" type="email" name="email" required>
 
-        <label for="new-name">Name</label>
-        <input id="new-name" type="text" name="name" required>
+            <label for="new-name">Name</label>
+            <input id="new-name" type="text" name="name" required>
 
-        <label for="new-password">Password</label>
-        <input id="new-password" type="password" name="password" required>
+            <label for="new-password">Password</label>
+            <input id="new-password" type="password" name="password" required>
 
-        <input type="submit" id="signUp" value="Sign up">
-    </form>
-    <br>
-    <button type="button" id="country">Search Server Location (By Country)</button> <span id="countryText"></span>
+            <input type="submit" id="signUp" value="Sign up">
+        </form>
+        <br>
+        <button type="button" id="country">Search Server Location (By Country)</button> <span id="countryText"></span>
+    </div>
 </body>
+
+<!-- Footer -->
+<footer class="footer" id="firstFooter">
+    <div class="container">
+        <div class="content has-text-centered">
+            <div class="soc">
+                <a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+            </div>
+            <p>
+                <strong id="Subjugate">Subjugate</strong> by <a href="/">Blind Games Studio</a>.
+            </p>
+        </div>
+    </div>
+</footer>
 
 <script>
     document.getElementById("country").addEventListener("click", function () {

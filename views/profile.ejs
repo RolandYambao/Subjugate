@@ -14,6 +14,21 @@
 
         body {
             background-color: black;
+        }
+
+        strong {
+            color: black
+        }
+
+        #firstFooter {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: #301934;
+            color: white;
+        }
+
+        #Subjugate {
             color: white;
         }
     </style>
@@ -44,17 +59,55 @@
         </div>
     </nav>
 
-    <h2><strong>Profile Page</strong></h2>
-    <h3>Welcome to your <strong>PROFILE</strong></h3>
-    <br>
-    <p><strong>Id:</strong>
-        <%= id %>
-    </p>
-    <p><strong>Name:</strong>
-        <%= name %>
-    </p>
-    <p><strong>Email:</strong>
-        <%= email %>
-    </p>
+    <br /><br />
+    <!-- Title -->
+    <div class="columns">
+        <div class="column has-text-centered">
+            <h1 class="title" style="color: ghostwhite;" id="mainTitle">Welcome to Blind Games Studio</h1>
+        </div>
+    </div>
+
+    <br /><br /><br /><br />
+    <div class="column is-4 is-offset-4">
+        <div class="card large">
+            <div class="card-image">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <h2><strong>Profile Page</strong></h2>
+                            <h3>Welcome to your <strong>PROFILE</strong></h3>
+                            <br>
+                            <p><strong>Id:</strong>
+                                <%= id %>
+                            </p>
+                            <p><strong>Name:</strong>
+                                <%= name %>
+                            </p>
+                            <p><strong>Email:</strong>
+                                <%= email %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </div>
 
 </body>
+
+<!-- Footer -->
+<footer class="footer" id="firstFooter">
+    <div class="container">
+        <div class="content has-text-centered">
+            <div class="soc">
+                <a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+            </div>
+            <p>
+                <strong id="Subjugate">Subjugate</strong> by <a href="/">Blind Games Studio</a>.
+            </p>
+        </div>
+    </div>
+</footer>
