@@ -93,25 +93,25 @@
                                 <!-- <div class="section">
                                     <div class="row columns is-multiline">
                                         <div v-for="card in cardData" key="card.id" class="column"> -->
-                                            <div class="card large">
-                                                <div class="card-image">
-                                                    <figure class="image is-square">
-                                                        <img src="https://i.imgur.com/RJPDuSY.jpeg" alt="Image">
-                                                    </figure>
-                                                </div>
-                                                <div class="card-content">
-                                                    <div class="media">
-                                                        <div class="media-content">
-                                                            <p class="title is-4 no-padding">
-                                                                <%= a.firstFaction %> <br>
-                                                                    <a href="/factionTraits"><small>View Legions of
-                                                                            Tyranny</small></a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                <div class="card large">
+                                    <div class="card-image">
+                                        <figure class="image is-square">
+                                            <img src="https://i.imgur.com/RJPDuSY.jpeg" alt="Image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-content">
+                                                <p class="title is-4 no-padding">
+                                                    <%= a.firstFaction %> <br>
+                                                        <a href="/factionTraits"><small>View Legions of
+                                                                Tyranny</small></a>
+                                                </p>
                                             </div>
-                                        <!-- </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- </div>
                                     </div>
                                 </div> -->
                     </div>
@@ -119,24 +119,24 @@
                         <!-- <div class="section">
                             <div class="row columns is-multiline">
                                 <div v-for="card in cardData" key="card.id" class="column"> -->
-                                    <div class="card large">
-                                        <div class="card-image">
-                                            <figure class="image is-square">
-                                                <img src="https://i.imgur.com/Kf1JGmf.jpeg" alt="Image">
-                                            </figure>
-                                        </div>
-                                        <div class="card-content">
-                                            <div class="media">
-                                                <div class="media-content">
-                                                    <p class="title is-4 no-padding">
-                                                        <%= a.secondFaction %>
-                                                            <p>Coming Soon</p>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                        <div class="card large">
+                            <div class="card-image">
+                                <figure class="image is-square">
+                                    <img src="https://i.imgur.com/Kf1JGmf.jpeg" alt="Image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-content">
+                                        <p class="title is-4 no-padding">
+                                            <%= a.secondFaction %>
+                                                <p>Coming Soon</p>
+                                        </p>
                                     </div>
-                                <!-- </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </div>
                             </div>
                         </div> -->
                     </div>
@@ -144,24 +144,24 @@
                         <!-- <div class="section">
                             <div class="row columns is-multiline">
                                 <div v-for="card in cardData" key="card.id" class="column"> -->
-                                    <div class="card large">
-                                        <div class="card-image">
-                                            <figure class="image is-square">
-                                                <img src="https://i.imgur.com/akcJBzO.jpeg" alt="Image">
-                                            </figure>
-                                        </div>
-                                        <div class="card-content">
-                                            <div class="media">
-                                                <div class="media-content">
-                                                    <p class="title is-4 no-padding">
-                                                        <%= a.thirdFaction %>
-                                                            <p>Coming Soon</p>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                        <div class="card large">
+                            <div class="card-image">
+                                <figure class="image is-square">
+                                    <img src="https://i.imgur.com/akcJBzO.jpeg" alt="Image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-content">
+                                        <p class="title is-4 no-padding">
+                                            <%= a.thirdFaction %>
+                                                <p>Coming Soon</p>
+                                        </p>
                                     </div>
-                                <!-- </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </div>
                             </div>
                         </div> -->
                     </div>
@@ -188,7 +188,35 @@
 
         <% } %>
             <% if (!currentUser) { %>
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                 <h1 id="signUpNow">Please Signup or Login</h1>
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <style>
+                    #firstFooter {
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        background: #301934;
+                        color: white;
+                    }
+                </style>
+
+                <!-- Footer -->
+                <footer class="footer" id="firstFooter">
+                    <div class="container">
+                        <div class="content has-text-centered">
+                            <div class="soc">
+                                <a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+                            </div>
+                            <p>
+                                <strong id="Subjugate">Subjugate</strong> by <a href="/">Blind Games
+                                    Studio</a>.
+                            </p>
+                        </div>
+                    </div>
+                </footer>
                 <% } %>
 </body>
 
