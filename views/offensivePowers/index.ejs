@@ -98,6 +98,10 @@
             float: none;
             max-width: 600px;
         }
+
+        img {
+            object-fit: scale-down;
+        }
     </style>
 
 </head>
@@ -137,193 +141,196 @@
 
         <!-- Power Cards -->
         <div class="container">
-            <% let a=offensivePowers[0]; %>
-                <% a=a.toJSON() %>
-                    <div class="section">
-                        <div id="app" class="row columns is-centered">
-                            <div v-for="card in cardData" key="card.id" class="column">
-                                <div class="card large">
-                                    <div class="card-image">
-                                        <figure class="image">
-                                            <img src="https://i.imgur.com/r3X7bxl.jpg" alt="Image">
-                                        </figure>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="media">
-                                            <div class="media-content">
-                                                <p class="title is-4 no-padding">
-                                                    <%= a.name %>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Hitpoints: ' + a.cooldownTime %>
-                                            </p>
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Build Time (Seconds): ' + a.requirement %>
-                                            </p>
-                                            <p>
-                                                <%= 'Description: ' + a.description %>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        </div>
+            <div class="section">
+                <div class="row columns is-multiline">
 
-        <div class="container">
-            <% a=offensivePowers[1]; %>
-                <% a=a.toJSON() %>
-                    <div class="section">
-                        <div id="app" class="row columns is-centered">
-                            <div v-for="card in cardData" key="card.id" class="column">
-                                <div class="card large">
-                                    <div class="card-image">
-                                        <figure class="image">
-                                            <img src="https://i.imgur.com/SSZpAte.jpg" alt="Image">
-                                        </figure>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="media">
-                                            <div class="media-content">
-                                                <p class="title is-4 no-padding">
-                                                    <%= a.name %>
-                                                </p>
+                    <div class="column is-4">
+                        <% let a=offensivePowers[0]; %>
+                            <% a=a.toJSON() %>
+                                <!-- <div class="section">
+                                    <div id="app" class="row columns is-centered">
+                                        <div v-for="card in cardData" key="card.id" class="column"> -->
+                                            <div class="card large">
+                                                <div class="card-image">
+                                                    <figure class="image is-square">
+                                                        <img src="https://i.imgur.com/r3X7bxl.jpg" alt="Image">
+                                                    </figure>
+                                                </div>
+                                                <div class="card-content">
+                                                    <div class="media">
+                                                        <div class="media-content">
+                                                            <p class="title is-4 no-padding">
+                                                                <%= a.name %>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content">
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Hitpoints: ' + a.cooldownTime %>
+                                                        </p>
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Build Time (Seconds): ' + a.requirement %>
+                                                        </p>
+                                                        <p>
+                                                            <%= 'Description: ' + a.description %>
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="content">
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Hitpoints: ' + a.cooldownTime %>
-                                            </p>
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Build Time (Seconds): ' + a.requirement %>
-                                            </p>
-                                            <p>
-                                                <%= 'Description: ' + a.description %>
-                                            </p>
-                                        </div>
+                                        <!-- </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                </div> -->
                     </div>
-        </div>
-
-        <div class="container">
-            <% a=offensivePowers[2]; %>
-                <% a=a.toJSON() %>
-                    <div class="section">
-                        <div id="app" class="row columns is-centered">
-                            <div v-for="card in cardData" key="card.id" class="column">
-                                <div class="card large">
-                                    <div class="card-image">
-                                        <figure class="image">
-                                            <img src="https://i.imgur.com/eafiANM.jpg" alt="Image">
-                                        </figure>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="media">
-                                            <div class="media-content">
-                                                <p class="title is-4 no-padding">
-                                                    <%= a.name %>
-                                                </p>
+                    <div class="column is-4">
+                        <% a=offensivePowers[1]; %>
+                            <% a=a.toJSON() %>
+                                <!-- <div class="section">
+                                    <div id="app" class="row columns is-centered">
+                                        <div v-for="card in cardData" key="card.id" class="column"> -->
+                                            <div class="card large">
+                                                <div class="card-image">
+                                                    <figure class="image is-square">
+                                                        <img src="https://i.imgur.com/SSZpAte.jpg" alt="Image">
+                                                    </figure>
+                                                </div>
+                                                <div class="card-content">
+                                                    <div class="media">
+                                                        <div class="media-content">
+                                                            <p class="title is-4 no-padding">
+                                                                <%= a.name %>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content">
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Hitpoints: ' + a.cooldownTime %>
+                                                        </p>
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Build Time (Seconds): ' + a.requirement %>
+                                                        </p>
+                                                        <p>
+                                                            <%= 'Description: ' + a.description %>
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="content">
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Hitpoints: ' + a.cooldownTime %>
-                                            </p>
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Build Time (Seconds): ' + a.requirement %>
-                                            </p>
-                                            <p>
-                                                <%= 'Description: ' + a.description %>
-                                            </p>
-                                        </div>
+                                        <!-- </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                </div> -->
                     </div>
-        </div>
-
-        <div class="container">
-            <% a=offensivePowers[3]; %>
-                <% a=a.toJSON() %>
-                    <div class="section">
-                        <div id="app" class="row columns is-centered">
-                            <div v-for="card in cardData" key="card.id" class="column">
-                                <div class="card large">
-                                    <div class="card-image">
-                                        <figure class="image">
-                                            <img src="https://i.imgur.com/1HTWjjR.jpg" alt="Image">
-                                        </figure>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="media">
-                                            <div class="media-content">
-                                                <p class="title is-4 no-padding">
-                                                    <%= a.name %>
-                                                </p>
+                    <div class="column is-4">
+                        <% a=offensivePowers[2]; %>
+                            <% a=a.toJSON() %>
+                                <!-- <div class="section">
+                                    <div id="app" class="row columns is-centered">
+                                        <div v-for="card in cardData" key="card.id" class="column"> -->
+                                            <div class="card large">
+                                                <div class="card-image">
+                                                    <figure class="image is-square">
+                                                        <img src="https://i.imgur.com/eafiANM.jpg" alt="Image">
+                                                    </figure>
+                                                </div>
+                                                <div class="card-content">
+                                                    <div class="media">
+                                                        <div class="media-content">
+                                                            <p class="title is-4 no-padding">
+                                                                <%= a.name %>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content">
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Hitpoints: ' + a.cooldownTime %>
+                                                        </p>
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Build Time (Seconds): ' + a.requirement %>
+                                                        </p>
+                                                        <p>
+                                                            <%= 'Description: ' + a.description %>
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="content">
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Hitpoints: ' + a.cooldownTime %>
-                                            </p>
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Build Time (Seconds): ' + a.requirement %>
-                                            </p>
-                                            <p>
-                                                <%= 'Description: ' + a.description %>
-                                            </p>
-                                        </div>
+                                        <!-- </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                </div> -->
                     </div>
-        </div>
-
-        <div class="container">
-            <% a=offensivePowers[4]; %>
-                <% a=a.toJSON() %>
-                    <div class="section">
-                        <div id="app" class="row columns is-centered">
-                            <div v-for="card in cardData" key="card.id" class="column">
-                                <div class="card large">
-                                    <div class="card-image">
-                                        <figure class="image">
-                                            <img src="https://i.imgur.com/tbdclYL.jpg" alt="Image">
-                                        </figure>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="media">
-                                            <div class="media-content">
-                                                <p class="title is-4 no-padding">
-                                                    <%= a.name %>
-                                                </p>
+                    <div class="column is-4 is-offset-2">
+                        <% a=offensivePowers[3]; %>
+                            <% a=a.toJSON() %>
+                                <!-- <div class="section">
+                                    <div id="app" class="row columns is-centered">
+                                        <div v-for="card in cardData" key="card.id" class="column"> -->
+                                            <div class="card large">
+                                                <div class="card-image">
+                                                    <figure class="image is-square">
+                                                        <img src="https://i.imgur.com/1HTWjjR.jpg" alt="Image">
+                                                    </figure>
+                                                </div>
+                                                <div class="card-content">
+                                                    <div class="media">
+                                                        <div class="media-content">
+                                                            <p class="title is-4 no-padding">
+                                                                <%= a.name %>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content">
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Hitpoints: ' + a.cooldownTime %>
+                                                        </p>
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Build Time (Seconds): ' + a.requirement %>
+                                                        </p>
+                                                        <p>
+                                                            <%= 'Description: ' + a.description %>
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="content">
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Hitpoints: ' + a.cooldownTime %>
-                                            </p>
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Build Time (Seconds): ' + a.requirement %>
-                                            </p>
-                                            <p>
-                                                <%= 'Description: ' + a.description %>
-                                            </p>
-                                        </div>
+                                        <!-- </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                </div> -->
                     </div>
+                    <div class="column is-4">
+                        <% a=offensivePowers[4]; %>
+                            <% a=a.toJSON() %>
+                                <!-- <div class="section">
+                                    <div id="app" class="row columns is-centered">
+                                        <div v-for="card in cardData" key="card.id" class="column"> -->
+                                            <div class="card large">
+                                                <div class="card-image">
+                                                    <figure class="image is-square">
+                                                        <img src="https://i.imgur.com/tbdclYL.jpg" alt="Image">
+                                                    </figure>
+                                                </div>
+                                                <div class="card-content">
+                                                    <div class="media">
+                                                        <div class="media-content">
+                                                            <p class="title is-4 no-padding">
+                                                                <%= a.name %>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content">
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Hitpoints: ' + a.cooldownTime %>
+                                                        </p>
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Build Time (Seconds): ' + a.requirement %>
+                                                        </p>
+                                                        <p>
+                                                            <%= 'Description: ' + a.description %>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <!-- </div>
+                                    </div>
+                                </div> -->
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Comment System -->

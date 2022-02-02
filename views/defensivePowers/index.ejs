@@ -98,6 +98,10 @@
             float: none;
             max-width: 600px;
         }
+
+        img {
+            object-fit: scale-down;
+        }
     </style>
 
 </head>
@@ -137,14 +141,18 @@
 
         <!-- Power Cards -->
         <div class="container">
-            <% let a=defensivePowers[0]; %>
-                <% a=a.toJSON() %>
-                    <div class="section">
-                        <div id="app" class="row columns is-centered">
-                            <div v-for="card in cardData" key="card.id" class="column">
+            <div class="section">
+                <div class="row columns is-multiline">
+
+                    <div class="column is-4">
+                        <% let a=defensivePowers[0]; %>
+                            <% a=a.toJSON() %>
+                                <!-- <div class="section">
+                                    <div id="app" class="row columns is-centered">
+                                        <div v-for="card in cardData" key="card.id" class="column"> -->
                                 <div class="card large">
                                     <div class="card-image">
-                                        <figure class="image">
+                                        <figure class="image is-square">
                                             <img src="https://i.imgur.com/qCPxIrx.jpg" alt="Image">
                                         </figure>
                                     </div>
@@ -169,20 +177,19 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                                <!-- </div>
+                                    </div>
+                                </div> -->
                     </div>
-        </div>
-
-        <div class="container">
-            <% a=defensivePowers[1]; %>
-                <% a=a.toJSON() %>
-                    <div class="section">
-                        <div id="app" class="row columns is-centered">
-                            <div v-for="card in cardData" key="card.id" class="column">
+                    <div class="column is-4">
+                        <% a=defensivePowers[1]; %>
+                            <% a=a.toJSON() %>
+                                <!-- <div class="section">
+                                    <div id="app" class="row columns is-centered">
+                                        <div v-for="card in cardData" key="card.id" class="column"> -->
                                 <div class="card large">
                                     <div class="card-image">
-                                        <figure class="image">
+                                        <figure class="image is-square">
                                             <img src="https://i.imgur.com/gxLmt4S.jpg" alt="Image">
                                         </figure>
                                     </div>
@@ -207,20 +214,19 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                                <!-- </div>
+                                    </div>
+                                </div> -->
                     </div>
-        </div>
-
-        <div class="container">
-            <% a=defensivePowers[2]; %>
-                <% a=a.toJSON() %>
-                    <div class="section">
-                        <div id="app" class="row columns is-centered">
-                            <div v-for="card in cardData" key="card.id" class="column">
+                    <div class="column is-4">
+                        <% a=defensivePowers[2]; %>
+                            <% a=a.toJSON() %>
+                                <!-- <div class="section">
+                                    <div id="app" class="row columns is-centered">
+                                        <div v-for="card in cardData" key="card.id" class="column"> -->
                                 <div class="card large">
                                     <div class="card-image">
-                                        <figure class="image">
+                                        <figure class="image is-square">
                                             <img src="https://i.imgur.com/88yPLxr.jpg" alt="Image">
                                         </figure>
                                     </div>
@@ -245,9 +251,12 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                                <!-- </div>
+                                    </div>
+                                </div> -->
                     </div>
+                </div>
+            </div>
         </div>
 
         <!-- Comment System -->
