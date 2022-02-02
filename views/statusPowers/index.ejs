@@ -102,6 +102,39 @@
         img {
             object-fit: scale-down;
         }
+
+        #commentBox {
+            width: 500px;
+            height: 40px;
+            text-align: center;
+        }
+
+        #comment {
+            margin-left: 5px;
+            height: 40px;
+            width: 100px;
+            color: black;
+            background-color: lightgray;
+            border-radius: 100px;
+        }
+
+        #deleteButton {
+            margin-left: 5px;
+            height: 20px;
+            width: 75px;
+            color: black;
+            background-color: lightgray;
+            border-radius: 100px;
+        }
+
+        #editButton {
+            margin-left: 5px;
+            height: 20px;
+            width: 75px;
+            color: black;
+            background-color: lightgray;
+            border-radius: 100px;
+        }
     </style>
 
 </head>
@@ -261,7 +294,7 @@
         <!-- Comment System -->
         <form method="POST" action="/statusComments">
             <label for="content">Comment</label>
-            <input type="text" name="content">
+            <input type="text" name="content" id="commentBox">
             <input type="submit" id="comment">
         </form>
 
@@ -278,7 +311,7 @@
                         </form>
                         <form method="POST" action="/statusComments/<%= statusComments[index].id %>/?_method=PUT">
                             <input type="text" name="content" value="<%= statusComments.content %>">
-                            <input type="submit" value="Edit">
+                            <input type="submit" id="editButton" value="Edit">
                         </form>
                     </div>
                     <% } %>
