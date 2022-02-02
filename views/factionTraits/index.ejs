@@ -64,6 +64,10 @@
             float: none;
             max-width: 600px;
         }
+
+        img {
+            object-fit: scale-down;
+        }
     </style>
 </head>
 
@@ -103,81 +107,87 @@
 
         <!-- Faction Trait Cards -->
         <div class="container">
-            <% let a=factionTraits[0]; %>
-                <% a=a.toJSON() %>
-                    <div class="section">
-                        <div id="app" class="row columns is-centered">
-                            <div v-for="card in cardData" key="card.id" class="column">
-                                <div class="card large">
-                                    <div class="card-image">
-                                        <figure class="image">
-                                            <img src="https://i.imgur.com/Px81Dd4.jpeg" alt="Image">
-                                        </figure>
+            <div class="section">
+                <div class="row columns is-multiline">
+
+                    <div class="column is-4">
+                        <% let a=factionTraits[0]; %>
+                            <% a=a.toJSON() %>
+                                <!-- <div class="section">
+                                    <div id="app" class="row columns is-centered">
+                                        <div v-for="card in cardData" key="card.id" class="column"> -->
+                                            <div class="card large">
+                                                <div class="card-image">
+                                                    <figure class="image is-square">
+                                                        <img src="https://i.imgur.com/Px81Dd4.jpeg" alt="Image">
+                                                    </figure>
+                                                </div>
+                                                <div class="card-content">
+                                                    <div class="media">
+                                                        <div class="media-content">
+                                                            <p class="title is-4 no-padding">
+                                                                <%= a.units %> <br>
+                                                                    <a href="/factionUnits">See All</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <!-- </div>
                                     </div>
-                                    <div class="card-content">
-                                        <div class="media">
-                                            <div class="media-content">
-                                                <p class="title is-4 no-padding">
-                                                    <%= a.units %> <br>
-                                                        <a href="/factionUnits">See All</a>
-                                                </p>
+                                </div> -->
+                    </div>
+                    <div class="column is-4">
+                        <!-- <div class="section">
+                            <div id="app" class="row columns is-centered">
+                                <div v-for="card in cardData" key="card.id" class="column"> -->
+                                    <div class="card large">
+                                        <div class="card-image">
+                                            <figure class="image is-square">
+                                                <img src="https://i.imgur.com/i1r4lDh.jpeg" alt="Image">
+                                            </figure>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="media">
+                                                <div class="media-content">
+                                                    <p class="title is-4 no-padding">
+                                                        <%= a.buildings %> <br>
+                                                            <a href="/factionBuildings">See All</a>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                <!-- </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
-        </div>
-
-        <div class="container">
-            <div class="section">
-                <div id="app" class="row columns is-centered">
-                    <div v-for="card in cardData" key="card.id" class="column">
-                        <div class="card large">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="https://i.imgur.com/i1r4lDh.jpeg" alt="Image">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-4 no-padding">
-                                            <%= a.buildings %> <br>
-                                                <a href="/factionBuildings">See All</a>
-                                        </p>
+                    <div class="column is-4">
+                        <!-- <div class="section">
+                            <div id="app" class="row columns is-centered">
+                                <div v-for="card in cardData" key="card.id" class="column"> -->
+                                    <div class="card large">
+                                        <div class="card-image">
+                                            <figure class="image is-square">
+                                                <img src="https://i.imgur.com/nNCxIAL.jpeg" alt="Image">
+                                            </figure>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="media">
+                                                <div class="media-content">
+                                                    <p class="title is-4 no-padding">
+                                                        <%= a.supportPowers %> <br>
+                                                            <a href="/factionPowers">See All</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                <!-- </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="container">
-            <div class="section">
-                <div id="app" class="row columns is-centered">
-                    <div v-for="card in cardData" key="card.id" class="column">
-                        <div class="card large">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="https://i.imgur.com/nNCxIAL.jpeg" alt="Image">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-4 no-padding">
-                                            <%= a.supportPowers %> <br>
-                                                <a href="/factionPowers">See All</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

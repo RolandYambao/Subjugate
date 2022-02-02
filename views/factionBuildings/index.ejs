@@ -64,6 +64,10 @@
             float: none;
             max-width: 600px;
         }
+
+        img {
+            object-fit: scale-down;
+        }
     </style>
 </head>
 
@@ -102,86 +106,92 @@
         </div>
 
         <!-- Faction Building Cards -->
+
         <div class="container">
-            <% let a=factionBuildings[0]; %>
-                <% a=a.toJSON() %>
-                    <div class="section">
-                        <div id="app" class="row columns is-centered">
-                            <div v-for="card in cardData" key="card.id" class="column">
-                                <div class="card large">
-                                    <div class="card-image">
-                                        <figure class="image">
-                                            <img src="https://i.imgur.com/HhzHAgy.jpg" alt="Image">
-                                        </figure>
+            <div class="section">
+                <div class="row columns is-multiline">
+
+                    <div class="column is-4">
+                        <% let a=factionBuildings[0]; %>
+                            <% a=a.toJSON() %>
+                                <!-- <div class="section">
+                                    <div id="app" class="row columns is-centered">
+                                        <div v-for="card in cardData" key="card.id" class="column"> -->
+                                            <div class="card large">
+                                                <div class="card-image">
+                                                    <figure class="image is-square">
+                                                        <img src="https://i.imgur.com/HhzHAgy.jpg" alt="Image">
+                                                    </figure>
+                                                </div>
+                                                <div class="card-content">
+                                                    <div class="media">
+                                                        <div class="media-content">
+                                                            <p class="title is-4 no-padding">
+                                                                <%= a.base %> <br>
+                                                                    <a href="/baseBuildings">View Base Buildings</a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <!-- </div>
                                     </div>
-                                    <div class="card-content">
-                                        <div class="media">
-                                            <div class="media-content">
-                                                <p class="title is-4 no-padding">
-                                                    <%= a.base %> <br>
-                                                        <a href="/baseBuildings">View Base Buildings</a>
-                                                </p>
+                                </div> -->
+                    </div>
+                    <div class="column is-4">
+                        <!-- <div class="section">
+                            <div id="app" class="row columns is-centered">
+                                <div v-for="card in cardData" key="card.id" class="column"> -->
+                                    <div class="card large">
+                                        <div class="card-image">
+                                            <figure class="image is-square">
+                                                <img src="https://i.imgur.com/i2GCEm2.jpg" alt="Image">
+                                            </figure>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="media">
+                                                <div class="media-content">
+                                                    <p class="title is-4 no-padding">
+                                                        <%= a.production %> <br>
+                                                            <a href="/productionBuildings">View Production Buildings</a>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                <!-- </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
-        </div>
-
-        <div class="container">
-            <div class="section">
-                <div id="app" class="row columns is-centered">
-                    <div v-for="card in cardData" key="card.id" class="column">
-                        <div class="card large">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="https://i.imgur.com/i2GCEm2.jpg" alt="Image">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-4 no-padding">
-                                            <%= a.production %> <br>
-                                                <a href="/productionBuildings">View Production Buildings</a>
-                                        </p>
+                    <div class="column is-4">
+                        <!-- <div class="section">
+                            <div id="app" class="row columns is-centered">
+                                <div v-for="card in cardData" key="card.id" class="column"> -->
+                                    <div class="card large">
+                                        <div class="card-image">
+                                            <figure class="image is-square">
+                                                <img src="https://i.imgur.com/kbQTDIg.jpg" alt="Image">
+                                            </figure>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="media">
+                                                <div class="media-content">
+                                                    <p class="title is-4 no-padding">
+                                                        <%= a.defensive %> <br>
+                                                            <a href="/defensiveBuildings">View Defensive Buildings</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                <!-- </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
+
                 </div>
             </div>
         </div>
-
-        <div class="container">
-            <div class="section">
-                <div id="app" class="row columns is-centered">
-                    <div v-for="card in cardData" key="card.id" class="column">
-                        <div class="card large">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="https://i.imgur.com/kbQTDIg.jpg" alt="Image">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-4 no-padding">
-                                            <%= a.defensive %> <br>
-                                                <a href="/defensiveBuildings">View Defensive Buildings</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Footer -->
         <footer class="footer">
             <div class="container">

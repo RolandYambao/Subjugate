@@ -98,6 +98,10 @@
             float: none;
             max-width: 600px;
         }
+
+        img {
+            object-fit: scale-down;
+        }
     </style>
 
 </head>
@@ -137,155 +141,159 @@
 
         <!-- Building Cards -->
         <div class="container">
-            <% let a=productionBuildings[0]; %>
-                <% a=a.toJSON() %>
-                    <div class="section">
-                        <div id="app" class="row columns is-centered">
-                            <div v-for="card in cardData" key="card.id" class="column">
-                                <div class="card large">
-                                    <div class="card-image">
-                                        <figure class="image">
-                                            <img src="https://i.imgur.com/pOLy86c.jpg" alt="Image">
-                                        </figure>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="media">
-                                            <div class="media-content">
-                                                <p class="title is-4 no-padding">
-                                                    <%= a.name %>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Hitpoints: ' + a.hp %>
-                                            </p>
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Build Time (Seconds): ' + a.buildTime %>
-                                            </p>
-                                            <p>
-                                                <%= 'Description: ' + a.description %>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        </div>
+            <div class="section">
+                <div class="row columns is-multiline">
 
-        <div class="container">
-            <% a=productionBuildings[1]; %>
-                <% a=a.toJSON() %>
-                    <div class="section">
-                        <div id="app" class="row columns is-centered">
-                            <div v-for="card in cardData" key="card.id" class="column">
-                                <div class="card large">
-                                    <div class="card-image">
-                                        <figure class="image">
-                                            <img src="https://i.imgur.com/FhB6jra.jpg" alt="Image">
-                                        </figure>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="media">
-                                            <div class="media-content">
-                                                <p class="title is-4 no-padding">
-                                                    <%= a.name %>
-                                                </p>
+                    <div class="column is-4">
+                        <% let a=productionBuildings[0]; %>
+                            <% a=a.toJSON() %>
+                                <!-- <div class="section">
+                                    <div id="app" class="row columns is-centered">
+                                        <div v-for="card in cardData" key="card.id" class="column"> -->
+                                            <div class="card large">
+                                                <div class="card-image">
+                                                    <figure class="image is-square">
+                                                        <img src="https://i.imgur.com/pOLy86c.jpg" alt="Image">
+                                                    </figure>
+                                                </div>
+                                                <div class="card-content">
+                                                    <div class="media">
+                                                        <div class="media-content">
+                                                            <p class="title is-4 no-padding">
+                                                                <%= a.name %>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content">
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Hitpoints: ' + a.hp %>
+                                                        </p>
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Build Time (Seconds): ' + a.buildTime %>
+                                                        </p>
+                                                        <p>
+                                                            <%= 'Description: ' + a.description %>
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="content">
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Hitpoints: ' + a.hp %>
-                                            </p>
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Build Time (Seconds): ' + a.buildTime %>
-                                            </p>
-                                            <p>
-                                                <%= 'Description: ' + a.description %>
-                                            </p>
-                                        </div>
+                                        <!-- </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                </div> -->
                     </div>
-        </div>
-
-        <div class="container">
-            <% a=productionBuildings[2]; %>
-                <% a=a.toJSON() %>
-                    <div class="section">
-                        <div id="app" class="row columns is-centered">
-                            <div v-for="card in cardData" key="card.id" class="column">
-                                <div class="card large">
-                                    <div class="card-image">
-                                        <figure class="image">
-                                            <img src="https://i.imgur.com/MxJKmbf.jpg" alt="Image">
-                                        </figure>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="media">
-                                            <div class="media-content">
-                                                <p class="title is-4 no-padding">
-                                                    <%= a.name %>
-                                                </p>
+                    <div class="column is-4">
+                        <% a=productionBuildings[1]; %>
+                            <% a=a.toJSON() %>
+                                <!-- <div class="section">
+                                    <div id="app" class="row columns is-centered">
+                                        <div v-for="card in cardData" key="card.id" class="column"> -->
+                                            <div class="card large">
+                                                <div class="card-image">
+                                                    <figure class="image is-square">
+                                                        <img src="https://i.imgur.com/FhB6jra.jpg" alt="Image">
+                                                    </figure>
+                                                </div>
+                                                <div class="card-content">
+                                                    <div class="media">
+                                                        <div class="media-content">
+                                                            <p class="title is-4 no-padding">
+                                                                <%= a.name %>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content">
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Hitpoints: ' + a.hp %>
+                                                        </p>
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Build Time (Seconds): ' + a.buildTime %>
+                                                        </p>
+                                                        <p>
+                                                            <%= 'Description: ' + a.description %>
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="content">
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Hitpoints: ' + a.hp %>
-                                            </p>
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Build Time (Seconds): ' + a.buildTime %>
-                                            </p>
-                                            <p>
-                                                <%= 'Description: ' + a.description %>
-                                            </p>
-                                        </div>
+                                        <!-- </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                </div> -->
                     </div>
-        </div>
-
-        <div class="container">
-            <% a=productionBuildings[3]; %>
-                <% a=a.toJSON() %>
-                    <div class="section">
-                        <div id="app" class="row columns is-centered">
-                            <div v-for="card in cardData" key="card.id" class="column">
-                                <div class="card large">
-                                    <div class="card-image">
-                                        <figure class="image">
-                                            <img src="https://i.imgur.com/WmzQfl2.jpg" alt="Image">
-                                        </figure>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="media">
-                                            <div class="media-content">
-                                                <p class="title is-4 no-padding">
-                                                    <%= a.name %>
-                                                </p>
+                    <div class="column is-4">
+                        <% a=productionBuildings[2]; %>
+                            <% a=a.toJSON() %>
+                                <!-- <div class="section">
+                                    <div id="app" class="row columns is-centered">
+                                        <div v-for="card in cardData" key="card.id" class="column"> -->
+                                            <div class="card large">
+                                                <div class="card-image">
+                                                    <figure class="image is-square">
+                                                        <img src="https://i.imgur.com/MxJKmbf.jpg" alt="Image">
+                                                    </figure>
+                                                </div>
+                                                <div class="card-content">
+                                                    <div class="media">
+                                                        <div class="media-content">
+                                                            <p class="title is-4 no-padding">
+                                                                <%= a.name %>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content">
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Hitpoints: ' + a.hp %>
+                                                        </p>
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Build Time (Seconds): ' + a.buildTime %>
+                                                        </p>
+                                                        <p>
+                                                            <%= 'Description: ' + a.description %>
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="content">
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Hitpoints: ' + a.hp %>
-                                            </p>
-                                            <p style="margin-bottom:0;">
-                                                <%= 'Build Time (Seconds): ' + a.buildTIme %>
-                                            </p>
-                                            <p>
-                                                <%= 'Description: ' + a.description %>
-                                            </p>
-                                        </div>
+                                        <!-- </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                </div> -->
                     </div>
+                    <div class="column is-4">
+                        <% a=productionBuildings[3]; %>
+                            <% a=a.toJSON() %>
+                                <!-- <div class="section">
+                                    <div id="app" class="row columns is-centered">
+                                        <div v-for="card in cardData" key="card.id" class="column"> -->
+                                            <div class="card large">
+                                                <div class="card-image">
+                                                    <figure class="image is-square">
+                                                        <img src="https://i.imgur.com/WmzQfl2.jpg" alt="Image">
+                                                    </figure>
+                                                </div>
+                                                <div class="card-content">
+                                                    <div class="media">
+                                                        <div class="media-content">
+                                                            <p class="title is-4 no-padding">
+                                                                <%= a.name %>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content">
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Hitpoints: ' + a.hp %>
+                                                        </p>
+                                                        <p style="margin-bottom:0;">
+                                                            <%= 'Build Time (Seconds): ' + a.buildTIme %>
+                                                        </p>
+                                                        <p>
+                                                            <%= 'Description: ' + a.description %>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <!-- </div>
+                                    </div>
+                                </div> -->
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Comment System -->
