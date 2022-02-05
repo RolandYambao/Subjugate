@@ -50,6 +50,14 @@
     #Subjugate {
         color: white;
     }
+
+    .navbar-burger {
+        color: white;
+    }
+
+    #navbarMenu {
+        background: #301934;
+    }
 </style>
 
 <body>
@@ -72,6 +80,12 @@
                         <div class="navbar-brand">
                             <a class="navbar-item" href="/">
                                 <p><strong>Blind Games Studio</strong></p>
+                            </a>
+                            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="true"
+                                data-target="navbarMenu">
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
                             </a>
                         </div>
                         <div id="navbarMenu" class="navbar-menu">
@@ -100,6 +114,24 @@
                     <h1 id="viewFactions"><a href="/factions">View All Factions</a></h1>
                 </div>
                 <% } %>
+
+                    <script>
+                        // Hamburger menu functionality
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+                            if ($navbarBurgers.length > 0) {
+                                $navbarBurgers.forEach(el => {
+                                    el.addEventListener('click', () => {
+                                        const target = el.dataset.target;
+                                        const $target = document.getElementById(target);
+                                        el.classList.toggle('is-active');
+                                        $target.classList.toggle('is-active');
+                                    });
+                                });
+                            }
+                        });
+
+                    </script>
 </body>
 
 <!-- Footer -->

@@ -15,6 +15,14 @@
     .navbar-item {
       color: white;
     }
+
+    .navbar-burger {
+      color: white;
+    }
+
+    #navbarMenu {
+      background: #301934;
+    }
   </style>
 </head>
 
@@ -27,9 +35,15 @@
             <a class="navbar-item" href="/">
               <p><strong>Blind Games Studio</strong></p>
             </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="true" data-target="navbarMenu">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
           </div>
 
-          <div id="navbarMenu" class="navbar-end navbar-toggler">
+          <div id="navbarMenu" class="navbar-menu">
             <div class="navbar-end">
               <a class="navbar-item" href="/auth/signup">
                 Signup
@@ -45,8 +59,24 @@
 
         <%- body %>
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-            crossorigin="anonymous"></script>
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+
+              // Hamburger menu functionality
+              document.addEventListener('DOMContentLoaded', () => {
+                const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+                if ($navbarBurgers.length > 0) {
+                  $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                      const target = el.dataset.target;
+                      const $target = document.getElementById(target);
+                      el.classList.toggle('is-active');
+                      $target.classList.toggle('is-active');
+                    });
+                  });
+                }
+              });
+
+            </script>
 </body>
 
 </html>
