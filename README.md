@@ -562,7 +562,7 @@ v=========================NEW=========================v
 ![Alt text](ProjectTwoWireframe.png "Wireframe")
 
 ## Reflections:
-This was a very tedious project and I am not particularly fond of it. Like many database related projects, it has too many steps required to do very little things, hence it is quite frustrating. The end result was interesting but I am not as proud of it as I was with project 1. I don't feel much of a sense of accomplishment with this, it isn't bad, it is merely not satisfying.
+This was a very tedious project but I am proud of the results. The website and and the artwork I chose to represent respective hypothetical assets in this fictional game integrate very well. It took a while to make but overall I am glad I created this.
 
 ## Credits:
 1. iStock Artists - Various Images
